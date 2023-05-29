@@ -8,4 +8,6 @@ public interface ITipoEnfermedadService {
     List<TipoEnfermedad> list();
     public void delete(int idTipoEnfermedad);
     public TipoEnfermedad listId(int idTipoEnfermedad);
+
+    void save(TipoEnfermedad tipoEnfermedad);
 }
