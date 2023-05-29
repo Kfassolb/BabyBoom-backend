@@ -3,7 +3,7 @@ package com.babyboom.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="tiposuscrip")
+@Table(name="tiposuscrips")
 public class Tiposuscrip {
     @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
