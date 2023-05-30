@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface IServicioService {
     void insert(Servicio servicio);
-
     List<Servicio> list();
-
     void delete(int idServicio);
+    public Servicio listId(int IdServicio);
+
 
 }
