@@ -29,9 +29,19 @@ public class ServicioController {
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
-    public ServicioDTO listId(@PathVariable("id" Integer id)){
-        ModelMapper m= new ModelMapper();
-        
+    public void delete(@PathVariable("id")Integer id){
+       this.sS.delete(id);}
+    @GetMapping("/{id}")
+    public ServicioDTO listId(@PathVariable("id")Integer id){
+    ModelMapper m=new ModelMapper();
+    ServicioDTO dto=(ServicioDTO)m.map(this.sS.listId(id), ServicioDTO.class);
+    return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody ServicioDTO dto){
+        ModelMapper m=new ModelMapper();
+        Servicio s=(Servicio)m.map(dto, Servicio.class);
+        this.sS.insert(s);
     }
 
 }
