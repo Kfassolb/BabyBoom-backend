@@ -10,7 +10,7 @@ public class SwaggerConfig {
     public SwaggerConfig() {
     }
     @Bean
-    public Docket apiDocket(){
-        return(new Docket(DocumentationType.SWAGGER_2)).select().apis(RequestHandlerSelectors.basePackage("com.BabyBoom.controllers")).paths(PathSelectors.any()).build();
+    public Docket apiDocket() {
+        return (new Docket(DocumentationType.SWAGGER_2)).select().apis(RequestHandlerSelectors.basePackage("com.BabyBoom.controllers")).paths(PathSelectors.any()).build();
     }
 }
