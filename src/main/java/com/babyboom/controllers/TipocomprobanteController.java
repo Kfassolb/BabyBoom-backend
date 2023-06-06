@@ -41,7 +41,7 @@ public class TipocomprobanteController {
         tcS.delete(id);
     }
 
-@GetMapping("/{id}")
+    @GetMapping("/{id}")
     public TipocomprobanteDTO listId(@PathVariable("id")Integer id){
     ModelMapper m = new ModelMapper();
     TipocomprobanteDTO dto = m.map(tcS.listId(id),TipocomprobanteDTO.class);
