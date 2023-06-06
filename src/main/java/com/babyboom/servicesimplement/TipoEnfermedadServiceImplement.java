@@ -25,4 +25,9 @@ public class TipoEnfermedadServiceImplement implements ITipoEnfermedadService {
         return pR.findById(IdTipoEnfermedad).orElse(new TipoEnfermedad());
     }
 
+    @Override
+    public List<TipoEnfermedad> findByTipoTipoEnfermedad(String tipoTipoEnfermedad) {
+        return pR.findByTipoTipoEnfermedad(tipoTipoEnfermedad);
+    }
+
 }

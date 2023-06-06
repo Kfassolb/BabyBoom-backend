@@ -10,4 +10,6 @@ public interface ITipoEnfermedadService {
     public void delete(int idTipoEnfermedad);
     public TipoEnfermedad listId(int idTipoEnfermedad);
 
+    List<TipoEnfermedad> findByTipoTipoEnfermedad (String tipoTipoEnfermedad);
+
 }

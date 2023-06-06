@@ -13,4 +13,5 @@ import java.util.List;
 public interface IBebeRepository extends JpaRepository<Bebe,Integer> {
 @Query("from Bebe b where b.fechaBebe=:fecha")
     List<Bebe> findByFechaBebe(@Param("fecha")LocalDate fecha);
+
 }

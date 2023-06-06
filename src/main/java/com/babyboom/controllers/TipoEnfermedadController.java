@@ -49,4 +49,12 @@ public class TipoEnfermedadController {
         pS.insert(p);
     }
 
+    @PostMapping("/buscarTipo")
+    List<TipoEnfermedadDTO>search(@RequestParam String tipoTipoEnfermedad){
+        return pS.findByTipoTipoEnfermedad(tipoTipoEnfermedad).stream().map(x ->{
+            ModelMapper m= new ModelMapper();
+            return m.map(x,TipoEnfermedadDTO.class);
+        }).collect(Collectors.toList());
+    }
+
 }
