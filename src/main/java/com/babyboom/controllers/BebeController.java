@@ -1,14 +1,13 @@
 package com.babyboom.controllers;
 
 import com.babyboom.dtos.BebeDTO;
-import com.babyboom.dtos.TipoEnfermedadDTO;
 import com.babyboom.entities.Bebe;
-import com.babyboom.entities.TipoEnfermedad;
 import com.babyboom.services.IBebeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,7 +49,13 @@ public class BebeController {
         Bebe b=m.map(dto,Bebe.class);
         bS.insert(b);
     }
-
+    @PostMapping("/buscarfecha")
+    List<BebeDTO>search(@RequestBody LocalDate fecha){
+        return bS.findByFechaBebe(fecha).stream().map(x ->{
+            ModelMapper m = new ModelMapper();
+            return m.map(x,BebeDTO.class);
+        }).collect(Collectors.toList());
+    }
 
 
 

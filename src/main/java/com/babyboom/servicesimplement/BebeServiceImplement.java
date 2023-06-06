@@ -4,9 +4,11 @@ import com.babyboom.entities.Bebe;
 import com.babyboom.repositories.IBebeRepository;
 import com.babyboom.services.IBebeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
-
+@Service
 public class BebeServiceImplement implements IBebeService {
     @Autowired
     private IBebeRepository bR;
@@ -28,5 +30,10 @@ public class BebeServiceImplement implements IBebeService {
     @Override
     public Bebe listId(int idBebe) {
         return bR.findById(idBebe).orElse(new Bebe());
+    }
+
+    @Override
+    public List<Bebe> findByFechaBebe(LocalDate fecha) {
+    return bR.findByFechaBebe(fecha);
     }
 }

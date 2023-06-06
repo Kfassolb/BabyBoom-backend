@@ -1,8 +1,8 @@
 package com.babyboom.services;
 
 import com.babyboom.entities.Bebe;
-import com.babyboom.entities.TipoEnfermedad;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface IBebeService {
@@ -10,4 +10,6 @@ public interface IBebeService {
     List<Bebe> list();
     public void delete(int idBebe);
     public Bebe listId(int idBebe);
+
+    List<Bebe> findByFechaBebe (LocalDate fecha);
 }
