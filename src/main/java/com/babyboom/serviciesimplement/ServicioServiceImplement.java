@@ -10,15 +10,19 @@ public class ServicioServiceImplement implements IServicioService {
     @Autowired
     private IServicioRepository sR;
     @Override
-    public void insert(Servicio servicio) {sR.save(servicio);}
+    public void insert(Servicio servicio) {
+        sR.save(servicio);
+    }
     @Override
     public List<Servicio> list() {
         return sR.findAll();
     }
     @Override
-    public void delete(int idServicio) { sR.deleteById(idServicio);}
+    public void delete(int idServicio) {
+        sR.findById(idServicio);
+    }
     @Override
-    public Servicio listId(int IdServicio) {
-        return sR.findById(IdServicio).orElse(new Servicio());
+    public Servicio listId(int idServicio) {
+        return sR.findById(idServicio).orElse(new Servicio());
     }
 }
