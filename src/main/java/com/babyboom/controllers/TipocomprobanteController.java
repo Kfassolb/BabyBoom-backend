@@ -54,9 +54,4 @@ public class TipocomprobanteController {
         Tipocomprobante t =m.map(dto,Tipocomprobante.class);
         tcS.insert(t);
     }
-
-
-
-
-
 }
