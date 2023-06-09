@@ -1,4 +1,9 @@
 package com.babyboom.repositories;
 
-public interface IEnfermedad_bebeRepository {
+import com.babyboom.entities.Enfermedad_bebe;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IEnfermedad_bebeRepository extends JpaRepository<Enfermedad_bebe,Integer> {
 }
