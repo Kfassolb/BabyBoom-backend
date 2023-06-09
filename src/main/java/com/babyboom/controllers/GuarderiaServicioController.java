@@ -26,4 +26,7 @@ public class GuarderiaServicioController {
             return m.map(x, GuarderiaServicioDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id){
+        this.iGSs.delete(id);}
 }
