@@ -5,24 +5,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = "enfermedad_bebes")
 public class Enfermedad_bebe {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ManyToOne
-    @JoinColumn(name = "idTipoEnfermedad")
     private TipoEnfermedad tipoEnfermedad;
-    @ManyToOne
-    @JoinColumn(name = "idBebe")
     private Bebe bebe;
-    private String sintomas;
-    public Enfermedad_bebe() {
-    }
-
-    public Enfermedad_bebe(TipoEnfermedad tipoEnfermedad, Bebe bebe) {
+    private String sintonmas;
+    public Enfermedad_bebe(TipoEnfermedad tipoEnfermedad, Bebe bebe, String sintonmas) {
         this.tipoEnfermedad = tipoEnfermedad;
         this.bebe = bebe;
-        this.sintomas = sintomas;
+        this.sintonmas = sintonmas;
     }
-
+    public Enfermedad_bebe() {
+    }
     public TipoEnfermedad getTipoEnfermedad() {
         return tipoEnfermedad;
     }
@@ -39,11 +31,12 @@ public class Enfermedad_bebe {
         this.bebe = bebe;
     }
 
-    public String getSintomas() {
-        return sintomas;
+    public String getSintonmas() {
+        return sintonmas;
     }
 
-    public void setSintomas(String sintomas) {
-        this.sintomas = sintomas;
+    public void setSintonmas(String sintonmas) {
+        this.sintonmas = sintonmas;
     }
+
 }
