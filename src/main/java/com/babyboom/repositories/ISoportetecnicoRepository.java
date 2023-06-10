@@ -1,11 +1,12 @@
 package com.babyboom.repositories;
 
 
+
 import com.babyboom.controllers.ProductoController;
-import com.babyboom.entities.Producto;
+import com.babyboom.entities.Soportetecnico;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IProductoRepository extends JpaRepository <Producto, Integer> {
+public interface ISoportetecnicoRepository extends JpaRepository <Soportetecnico, Integer> {
 }
