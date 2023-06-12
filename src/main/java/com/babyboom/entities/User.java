@@ -3,11 +3,11 @@ package com.babyboom.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "usuario")
-public class Usuario {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUsuario;
+    private int idUser;
 
     @Column(name="username", length = 30, nullable = false)
     private String username;
@@ -15,21 +15,21 @@ public class Usuario {
     @Column(name="password", length = 50, nullable = false)
     private String password;
 
-    public Usuario() {
+    public User() {
     }
 
-    public Usuario(int idUsuario, String username, String password) {
-        this.idUsuario = idUsuario;
+    public User(int idUser, String username, String password) {
+        this.idUser = idUser;
         this.username = username;
         this.password = password;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getUsername() {

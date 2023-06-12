@@ -1,17 +1,17 @@
 package com.babyboom.dtos;
 
-public class UsuarioDTO {
-    private int idUsuario;
+public class UserDTO {
+    private int idUser;
     private String username;
     private String password;
 
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getUsername() {
