@@ -5,9 +5,10 @@ import com.babyboom.repositories.ICompraRepository;
 import com.babyboom.services.ICompraService;
 import com.babyboom.services.IGuarderiaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ICompraServiceImpl implements ICompraService {
 
     @Autowired
