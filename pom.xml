@@ -48,45 +48,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<<<<<<< HEAD
+
         <dependency>
             <groupId>com.bryghts.ftypes-string</groupId>
             <artifactId>ftypes-string_2.11</artifactId>
             <version>0.0.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_2.11</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_2.11</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_2.11</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_2.11</artifactId>
-            <version>0.0.1</version>
-        </dependency>
+
         <dependency>
             <groupId>com.bryghts.ftypes-string</groupId>
             <artifactId>ftypes-string_2.10</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_2.10</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_sjs0.6_2.11</artifactId>
             <version>0.0.1</version>
         </dependency>
 
@@ -161,7 +132,7 @@
             <version>2.9.2</version>
         </dependency>
 
->>>>>>> main
+
     </dependencies>
 
     <build>
