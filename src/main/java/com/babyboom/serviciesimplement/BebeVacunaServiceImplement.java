@@ -13,10 +13,6 @@ public class BebeVacunaServiceImplement implements IBebeVacunaService {
     @Autowired
     private IBebeVacunaRepository iBVr;
     @Override
-    public void insert(BebeVacuna bebeVacuna) {
-        iBVr.save(bebeVacuna);
-    }
-    @Override
     public List<BebeVacuna> list() {
         return iBVr.findAll();
     }

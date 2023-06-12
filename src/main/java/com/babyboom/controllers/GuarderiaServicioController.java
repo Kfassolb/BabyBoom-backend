@@ -13,12 +13,6 @@ import java.util.stream.Collectors;
 public class GuarderiaServicioController {
     @Autowired
     private IGuarderiaServicioService iGSs;
-    @PostMapping
-    public void insert(@RequestBody GuarderiaServicioDTO dto){
-        ModelMapper m=new ModelMapper();
-        GuarderiaServicio gs=m.map(dto, GuarderiaServicio.class);
-        iGSs.insert(gs);
-    }
     @GetMapping
     public List<GuarderiaServicioDTO> list(){
         return iGSs.list().stream().map(x -> {
@@ -26,7 +20,4 @@ public class GuarderiaServicioController {
             return m.map(x, GuarderiaServicioDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id")Integer id){
-        this.iGSs.delete(id);}
 }

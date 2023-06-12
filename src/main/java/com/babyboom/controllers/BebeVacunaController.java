@@ -14,12 +14,6 @@ import java.util.stream.Collectors;
 public class BebeVacunaController {
     @Autowired
     private IBebeVacunaService iBVs;
-    @PostMapping
-    public void insert(@RequestBody BebeVacunaDTO dto){
-        ModelMapper m=new ModelMapper();
-        BebeVacuna bv=m.map(dto, BebeVacuna.class);
-        iBVs.insert(bv);
-    }
     @GetMapping
     public List<BebeVacunaDTO> list(){
         return iBVs.list().stream().map(x -> {

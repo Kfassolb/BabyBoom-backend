@@ -13,10 +13,6 @@ public class GuarderiaServicioImplement implements IGuarderiaServicioService {
     @Autowired
     private IGuarderiaServicioRepository iGSr;
     @Override
-    public void insert(GuarderiaServicio guarderiaServicio) {
-        iGSr.save(guarderiaServicio);
-    }
-    @Override
     public List<GuarderiaServicio> list() {
         return iGSr.findAll();
     }
