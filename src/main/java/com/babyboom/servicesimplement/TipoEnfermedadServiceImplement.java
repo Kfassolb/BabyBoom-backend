@@ -1,7 +1,5 @@
 package com.babyboom.servicesimplement;
 
-import com.babyboom.entities.TipoEnfermedad;
-import com.babyboom.services.ITipoEnfermedadService;
 import com.babyboom.services.ITipoEnfermedadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

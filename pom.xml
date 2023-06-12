@@ -66,10 +66,7 @@
             <artifactId>ftypes-string_sjs0.6_2.11</artifactId>
             <version>0.0.1</version>
         </dependency>
-        
-        <dependency>1
-            <groupId>com.bryghts.ftypes-string</groupId>j
-        </dependency>
+
 
         <dependency>
             <groupId>org.webjars.npm</groupId>
