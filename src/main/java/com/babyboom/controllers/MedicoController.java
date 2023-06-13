@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,5 +51,13 @@ public class MedicoController {
         ModelMapper mp = new ModelMapper();
         Medico medico = mp.map(mdto, Medico.class);
         medicoService.insert(medico);
+    }
+
+    @PostMapping("/buscarEspecialidad")
+    public List<MedicoDTO> buscar(@RequestParam String especialidad) {
+        return medicoService.listarPorEspecialidad(especialidad).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, MedicoDTO.class);
+        }).collect(Collectors.toList());
     }
 }

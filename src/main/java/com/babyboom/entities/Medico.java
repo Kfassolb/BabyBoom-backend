@@ -22,7 +22,7 @@ public class Medico {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "idUsuario")
+    @JoinColumn(name = "idUser")
     private User user;
 
     public Medico() {

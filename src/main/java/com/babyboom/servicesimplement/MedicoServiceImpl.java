@@ -32,4 +32,7 @@ public class MedicoServiceImpl implements IMedicoService {
     public Medico listId(int idMedico) {
         return medicoRepository.findById(idMedico).orElse(new Medico());
     }
+
+    @Override
+    public List<Medico> listarPorEspecialidad(String especialidad) {return medicoRepository.listarPorEspecialidad(especialidad);}
 }

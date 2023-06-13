@@ -9,4 +9,5 @@ public interface IMedicoService {
     List<Medico>list();
     public void delete(int idMedico);
     public Medico listId(int idMedico);
+    List<Medico> listarPorEspecialidad(String especialidad);
 }
