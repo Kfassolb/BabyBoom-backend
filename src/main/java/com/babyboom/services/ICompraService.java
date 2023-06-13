@@ -2,6 +2,7 @@ package com.babyboom.services;
 
 import com.babyboom.entities.Compra;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ICompraService {
@@ -9,7 +10,5 @@ public interface ICompraService {
 
     List<Compra>list();
 
-    public void delete(int idCompra);
-
-    public Compra listId(int idCompra);
+    List<Compra> buscarFecha(LocalDate fecha);
 }

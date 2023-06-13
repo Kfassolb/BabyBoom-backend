@@ -1,15 +1,21 @@
 package com.babyboom.dtos;
 
+import com.babyboom.entities.Tipocomprobante;
+
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 public class CompraDTO {
     private int idCompra;
 
-    private int idApoderado;
+    private Apoderado idApoderado;
 
-    private int idTipoComprobante;
+    private Tipocomprobante idTipoComprobante;
+
     private LocalDate Fecha;
+
     private int ventaTotal;
 
     public int getIdCompra() {
@@ -20,19 +26,19 @@ public class CompraDTO {
         this.idCompra = idCompra;
     }
 
-    public int getIdApoderado() {
+    public Apoderado getIdApoderado() {
         return idApoderado;
     }
 
-    public void setIdApoderado(int idApoderado) {
+    public void setIdApoderado(Apoderado idApoderado) {
         this.idApoderado = idApoderado;
     }
 
-    public int getIdTipoComprobante() {
+    public Tipocomprobante getIdTipoComprobante() {
         return idTipoComprobante;
     }
 
-    public void setIdTipoComprobante(int idTipoComprobante) {
+    public void setIdTipoComprobante(Tipocomprobante idTipoComprobante) {
         this.idTipoComprobante = idTipoComprobante;
     }
 

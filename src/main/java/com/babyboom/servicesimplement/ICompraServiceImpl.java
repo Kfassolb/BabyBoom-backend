@@ -7,6 +7,7 @@ import com.babyboom.services.IGuarderiaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 @Service
 public class ICompraServiceImpl implements ICompraService {
@@ -24,13 +25,10 @@ public class ICompraServiceImpl implements ICompraService {
         return cR.findAll();
     }
 
-    @Override
-    public void delete(int idCompra) {
-        cR.deleteById(idCompra);
+    @java.lang.Override
+    public List<Compra> buscarFecha(LocalDate fecha) {
+        return cR.findByDateCompra(fecha);
     }
 
-    @Override
-    public Compra listId(int idCompra) {
-        return cR.findById(idCompra).orElse(new Compra());
-    }
+
 }

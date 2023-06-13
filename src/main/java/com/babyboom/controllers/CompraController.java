@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,16 +36,12 @@ public class CompraController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id")Integer id){
-        cS.delete(id);
-    }
-
-    @GetMapping("/{id}")
-    public CompraDTO listId(@PathVariable("id")Integer id){
-        ModelMapper m = new ModelMapper();
-        CompraDTO dto = m.map(cS.listId(id),CompraDTO.class);
-        return dto;
+    @PostMapping("/buscar")
+    public List<CompraDTO> buscar(@RequestBody LocalDate fecha) {
+        return cS.buscarFecha(fecha).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, CompraDTO.class);
+        }).collect(Collectors.toList());
     }
     @PutMapping
     public void goUpdate(@RequestBody CompraDTO dto){

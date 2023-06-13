@@ -9,18 +9,21 @@ public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCompra;
-    @Column(name = "idApoderado", length = 20, nullable = false)
-    private int idApoderado;
-    @Column(name = "idTipoComprobante",length = 20, nullable = false)
-    private int idTipoComprobante;
+    @ManyToOne
+    @JoinColumn(name = "idApoderado",nullable = false)
+    private Apoderado idApoderado;
+    @ManyToOne
+    @JoinColumn(name = "idTipoComprobante",nullable = false)
+    private Tipocomprobante idTipoComprobante;
     @Column(name = "Fecha", nullable = false)
     private LocalDate Fecha;
+    @Column(name="ventaTotal",length = 10,nullable = false)
     private int ventaTotal;
 
     public Compra() {
     }
 
-    public Compra(int idCompra, int idApoderado, int idTipoComprobante, LocalDate fecha, int ventaTotal) {
+    public Compra(int idCompra, Apoderado idApoderado, Tipocomprobante idTipoComprobante, LocalDate fecha, int ventaTotal) {
         this.idCompra = idCompra;
         this.idApoderado = idApoderado;
         this.idTipoComprobante = idTipoComprobante;
@@ -36,19 +39,19 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public int getIdApoderado() {
+    public Apoderado getIdApoderado() {
         return idApoderado;
     }
 
-    public void setIdApoderado(int idApoderado) {
+    public void setIdApoderado(Apoderado idApoderado) {
         this.idApoderado = idApoderado;
     }
 
-    public int getIdTipoComprobante() {
+    public Tipocomprobante getIdTipoComprobante() {
         return idTipoComprobante;
     }
 
-    public void setIdTipoComprobante(int idTipoComprobante) {
+    public void setIdTipoComprobante(Tipocomprobante idTipoComprobante) {
         this.idTipoComprobante = idTipoComprobante;
     }
 
