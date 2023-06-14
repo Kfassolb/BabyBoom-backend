@@ -10,11 +10,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.babyboom.entities.Users;
-import com.babyboom.repositories.UserRepository;
+import com.babyboom.repositories.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
     private UserRepository repo;
