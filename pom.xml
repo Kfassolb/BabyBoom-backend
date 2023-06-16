@@ -18,6 +18,25 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -50,85 +69,36 @@
         </dependency>
 
         <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_2.11</artifactId>
-            <version>0.0.1</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <!-- JWT Tokens * -->
         <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_2.10</artifactId>
-            <version>0.0.1</version>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
         </dependency>
 
+        <!-- Desde Java 9+ -->
+        <!-- API, java.xml.bind module -->
         <dependency>
-            <groupId>com.bryghts.ftypes-string</groupId>
-            <artifactId>ftypes-string_sjs0.6_2.11</artifactId>
-            <version>0.0.1</version>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
 
-
+        <!-- Necesario desde Java 9+ -->
+        <!-- Runtime, com.sun.xml.bind module -->
         <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>string</artifactId>
-            <version>3.3.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>magic-string</artifactId>
-            <version>0.26.7</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.fascalsj</groupId>
-            <artifactId>string-manipulator</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.fascalsj</groupId>
-            <artifactId>string-manipulation</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.plooh.adssi</groupId>
-            <artifactId>string-store</artifactId>
-            <version>0.0.8</version>
-        </dependency>
-        <dependency>
-            <groupId>de.mklinger.micro</groupId>
-            <artifactId>strings</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.GG-A</groupId>
-            <artifactId>string-interpolator</artifactId>
-            <version>0.0.2</version>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
         <dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>3.1.1</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-
 
     </dependencies>
 
