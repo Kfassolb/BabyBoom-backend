@@ -1,12 +1,10 @@
 package com.babyboom.services;
 
-import com.babyboom.entities.User;
-
 import java.util.List;
+import com.babyboom.entities.Users;
 
 public interface IUserService {
-    public void insert (User usuario);
-    List<User>list();
-    public void delete(int idUsuario);
-    public User listId(int idUsuario);
+    public Integer insert(Users user);
+
+    List<Users> list();
 }

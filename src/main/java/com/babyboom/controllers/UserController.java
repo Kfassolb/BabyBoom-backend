@@ -1,51 +1,60 @@
 package com.babyboom.controllers;
 
-import com.babyboom.dtos.UserDTO;
-import com.babyboom.entities.User;
-import com.babyboom.services.IUserService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.support.SessionStatus;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.babyboom.entities.Users;
+import com.babyboom.services.IUserService;
 
-@RestController
+import javax.validation.Valid;
+
+@Controller
+@Secured({"ROLE_ADMIN"})
 @RequestMapping("/users")
 public class UserController {
     @Autowired
-    private IUserService usuarioService;
+    private PasswordEncoder bcrypt;
+    @Autowired
+    private IUserService uService;
 
-    @PostMapping
-    public void insert(@RequestBody UserDTO udto){
-        ModelMapper mp = new ModelMapper();
-        User usuario = mp.map(udto, User.class);
-        usuarioService.insert(usuario);
-    }
-    @GetMapping
-    public List<UserDTO> list(){
-        return usuarioService.list().stream().map(x->{
-            ModelMapper mp= new ModelMapper();
-            return mp.map(x, UserDTO.class);
-        }).collect(Collectors.toList());
-    }
+    @PostMapping("/save")
+    public String saveUser(@Valid Users user, BindingResult result, Model model, SessionStatus status)
+            throws Exception {
+        if (result.hasErrors()) {
+            return "usersecurity/user";
+        } else {
+            String bcryptPassword = bcrypt.encode(user.getPassword());
+            user.setPassword(bcryptPassword);
+            int rpta = uService.insert(user);
+            if (rpta > 0) {
+                model.addAttribute("mensaje", "Ya existe");
+                return "usersecurity/user";
+            } else {
+                model.addAttribute("mensaje", "Se guardó correctamente");
+                status.setComplete();
+            }
+        }
+        model.addAttribute("listaUsuarios", uService.list());
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer idUsuario){
-        usuarioService.delete(idUsuario);
-    }
-
-    @GetMapping({"/{id}"})
-    public UserDTO listId(@PathVariable("id") Integer idUsuario){
-        ModelMapper mp= new ModelMapper();
-        UserDTO udto = mp.map(usuarioService.listId(idUsuario), UserDTO.class);
-        return udto;
+        return "usersecurity/listUser";
     }
 
-    @PutMapping
-    public void update (@RequestBody UserDTO udto){
-        ModelMapper mp = new ModelMapper();
-        User usuario = mp.map(udto, User.class);
-        usuarioService.insert(usuario);
+    @GetMapping("/list")
+    public String listUser(Model model) {
+        try {
+            model.addAttribute("user", new Users());
+            model.addAttribute("listaUsuarios", uService.list());
+        } catch (Exception e) {
+            model.addAttribute("error", e.getMessage());
+        }
+        return "usersecurity/listUser";
     }
 }
