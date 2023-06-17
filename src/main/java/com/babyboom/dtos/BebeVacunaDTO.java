@@ -1,5 +1,6 @@
 package com.babyboom.dtos;
 
+import com.babyboom.entities.Bebe;
 import com.babyboom.entities.ControlVacunacion;
 
 public class BebeVacunaDTO {

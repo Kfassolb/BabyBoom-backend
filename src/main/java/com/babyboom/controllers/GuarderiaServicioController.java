@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/guarderiaservicio")
+@RequestMapping("/guarderiaservicios")
 public class GuarderiaServicioController {
     @Autowired
     private IGuarderiaServicioService iGSs;

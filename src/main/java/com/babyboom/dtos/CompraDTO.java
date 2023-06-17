@@ -1,5 +1,6 @@
 package com.babyboom.dtos;
 
+import com.babyboom.entities.Apoderado;
 import com.babyboom.entities.Tipocomprobante;
 
 import javax.persistence.Column;

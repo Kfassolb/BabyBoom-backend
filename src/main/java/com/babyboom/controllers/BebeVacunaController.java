@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/bebevacuna")
+@RequestMapping("/bebevacunas")
 public class BebeVacunaController {
     @Autowired
     private IBebeVacunaService iBVs;

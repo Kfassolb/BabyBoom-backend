@@ -10,10 +10,11 @@ import java.time.LocalDate;
 @Table (name = "problema")
 public class Problema {
 
+    @Id
     @ManyToOne
     @JoinColumn(name = "idSoporte", nullable = false)
     private Soportetecnico soportetecnico;
-
+    @Id
     @ManyToOne
     @JoinColumn(name = "idApoderado", nullable = false)
     private Apoderado apoderado;

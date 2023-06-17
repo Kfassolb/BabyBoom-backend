@@ -1,4 +1,7 @@
 package com.babyboom.repositories;
 
-public interface IApoderadoRepository {
+import com.babyboom.entities.Apoderado;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IApoderadoRepository extends JpaRepository<Apoderado,Integer> {
 }

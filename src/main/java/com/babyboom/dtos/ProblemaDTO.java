@@ -1,5 +1,6 @@
 package com.babyboom.dtos;
 
+import com.babyboom.entities.Apoderado;
 import com.babyboom.entities.Soportetecnico;
 
 import java.time.LocalDate;
@@ -64,4 +65,4 @@ public class ProblemaDTO {
     }
 }
 
-}
+

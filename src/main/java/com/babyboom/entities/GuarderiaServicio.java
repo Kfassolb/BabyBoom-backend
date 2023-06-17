@@ -3,14 +3,14 @@ package com.babyboom.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "guarderiaServicio")
+@Table(name = "guarderiaservicios")
 public class GuarderiaServicio {
     @Id
     @ManyToOne
-    @JoinColumn(name = "idServicio",nullable = false)
+    @JoinColumn(name = "idServicio")
     private Servicio servicio;
     @ManyToOne
-    @JoinColumn(name = "idGuarderia",nullable = false)
+    @JoinColumn(name = "idGuarderia")
     private Guarderia guarderia;
     public GuarderiaServicio() {
     }

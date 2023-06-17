@@ -1,5 +1,6 @@
 package com.babyboom.dtos;
 
+import com.babyboom.entities.Guarderia;
 import com.babyboom.entities.Servicio;
 
 public class GuarderiaServicioDTO {
