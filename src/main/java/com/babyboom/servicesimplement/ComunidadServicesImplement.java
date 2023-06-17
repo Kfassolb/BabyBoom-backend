@@ -11,15 +11,17 @@ import java.util.List;
 public class ComunidadServicesImplement implements IComunidadService {
     @Autowired
     private IComunidadRepository cR;
-
     @Override
     public void insert(Comunidad comunidad) {
         cR.save(comunidad);
-
     }
-
     @Override
     public List<Comunidad> list() {
         return cR.findAll();
     }
+    @Override
+    public void delete(int idComunidad){cR.deleteById(idComunidad);}
+    @Override
+    public Comunidad listId(int IdComunidad){return cR.findById(IdComunidad).orElse(new Comunidad());}
+
 }

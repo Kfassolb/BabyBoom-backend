@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="comunidad")
+@Table(name="comunidades")
 public class Comunidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,10 @@ private String nameComunidad;
         this.nameComunidad = nameComunidad;
         this.Contenido = contenido;
         this.FechaInicio = fechaInicio;
+    }
+
+    public Comunidad() {
+
     }
 
     public int getIdComunidad() {
