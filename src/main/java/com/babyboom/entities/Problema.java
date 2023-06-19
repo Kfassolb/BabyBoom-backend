@@ -11,10 +11,13 @@ import java.time.LocalDate;
 public class Problema {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idProblema;
+
     @ManyToOne
     @JoinColumn(name = "idSoporte", nullable = false)
     private Soportetecnico soportetecnico;
-    @Id
+
     @ManyToOne
     @JoinColumn(name = "idApoderado", nullable = false)
     private Apoderado apoderado;
@@ -34,52 +37,62 @@ public class Problema {
     public Problema(){
     }
 
-    public Problema(Soportetecnico soportetecnico, Apoderado apoderado, String Titulo,
-                    String Descripcion, LocalDate FechaInicio, LocalDate FechaFin) {
-
+    public Problema(int idProblema, Soportetecnico soportetecnico, Apoderado apoderado, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaFin) {
+        this.idProblema = idProblema;
         this.soportetecnico = soportetecnico;
         this.apoderado = apoderado;
-        this.Titulo = Titulo;
-        this.Descripcion = Descripcion;
-        this.FechaInicio = FechaInicio;
-        this.FechaFin = FechaFin;
+        Titulo = titulo;
+        Descripcion = descripcion;
+        FechaInicio = fechaInicio;
+        FechaFin = fechaFin;
     }
 
+    public int getIdProblema() {
+        return idProblema;
+    }
 
-    public Soportetecnico getSoportetecnico() {return soportetecnico;}
+    public void setIdProblema(int idProblema) {
+        this.idProblema = idProblema;
+    }
 
-    public void setSoportetecnico (Soportetecnico soportetecnico) {this. soportetecnico = soportetecnico;}
+    public Soportetecnico getSoportetecnico() {
+        return soportetecnico;
+    }
 
+    public void setSoportetecnico(Soportetecnico soportetecnico) {
+        this.soportetecnico = soportetecnico;
+    }
 
-    public Apoderado getApoderado() {return apoderado;}
+    public Apoderado getApoderado() {
+        return apoderado;
+    }
 
-    public void setApoderado (Apoderado apoderado) {this. apoderado = apoderado;}
-
+    public void setApoderado(Apoderado apoderado) {
+        this.apoderado = apoderado;
+    }
 
     public String getTitulo() {
         return Titulo;
     }
 
     public void setTitulo(String titulo) {
-        this.Titulo = titulo;
+        Titulo = titulo;
     }
-
 
     public String getDescripcion() {
         return Descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        this.Descripcion = descripcion;
+        Descripcion = descripcion;
     }
-
 
     public LocalDate getFechaInicio() {
         return FechaInicio;
     }
 
     public void setFechaInicio(LocalDate fechaInicio) {
-        this.FechaInicio = fechaInicio;
+        FechaInicio = fechaInicio;
     }
 
     public LocalDate getFechaFin() {
@@ -87,6 +100,6 @@ public class Problema {
     }
 
     public void setFechaFin(LocalDate fechaFin) {
-        this.FechaFin = fechaFin;
+        FechaFin = fechaFin;
     }
 }

@@ -6,17 +6,39 @@ import javax.persistence.*;
 @Table(name = "guarderiaservicios")
 public class GuarderiaServicio {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idGuarderiaServicio;
+
     @ManyToOne
-    @JoinColumn(name = "idServicio")
-    private Servicio servicio;
-    @ManyToOne
-    @JoinColumn(name = "idGuarderia")
+    @JoinColumn(name="idGuarderia")
     private Guarderia guarderia;
+
+    @ManyToOne
+    @JoinColumn(name="idServicio")
+    private Servicio servicio;
+
     public GuarderiaServicio() {
     }
 
-    public GuarderiaServicio(Servicio servicio, Guarderia guarderia) {
+    public GuarderiaServicio(int idGuarderiaServicio, Guarderia guarderia, Servicio servicio) {
+        this.idGuarderiaServicio = idGuarderiaServicio;
+        this.guarderia = guarderia;
         this.servicio = servicio;
+    }
+
+    public int getIdGuarderiaServicio() {
+        return idGuarderiaServicio;
+    }
+
+    public void setIdGuarderiaServicio(int idGuarderiaServicio) {
+        this.idGuarderiaServicio = idGuarderiaServicio;
+    }
+
+    public Guarderia getGuarderia() {
+        return guarderia;
+    }
+
+    public void setGuarderia(Guarderia guarderia) {
         this.guarderia = guarderia;
     }
 
@@ -26,13 +48,5 @@ public class GuarderiaServicio {
 
     public void setServicio(Servicio servicio) {
         this.servicio = servicio;
-    }
-
-    public Guarderia getGuarderia() {
-        return guarderia;
-    }
-
-    public void setGuarderia(Guarderia guarderia) {
-        this.guarderia = guarderia;
     }
 }

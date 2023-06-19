@@ -7,6 +7,7 @@ import com.babyboom.entities.Soportetecnico;
 import com.babyboom.services.ISoportetecnicoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class SoportetecnicoController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<SoportetecnicoDTO> list(){
         return tS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();

@@ -7,6 +7,7 @@ import com.babyboom.entities.Bebe;
 import com.babyboom.services.IApoderadoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class ApoderadoController {
     private IApoderadoService aS;
 
     @PostMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void insert(@RequestBody ApoderadoDTO dto){
         ModelMapper m=new ModelMapper();
         Apoderado b=m.map(dto, Apoderado.class);

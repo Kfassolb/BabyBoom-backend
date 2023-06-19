@@ -8,6 +8,7 @@ import com.babyboom.services.IGuarderiaService;
 import com.babyboom.services.ITipocomprobanteService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class GuarderiaController {
     //List
 
     @GetMapping
+    @PreAuthorize("hasAuthority('USER')")
     public List<GuarderiaDTO> list(){
         return gS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();

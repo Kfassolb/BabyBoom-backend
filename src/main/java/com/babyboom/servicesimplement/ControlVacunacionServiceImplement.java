@@ -1,4 +1,4 @@
-package com.babyboom.serviciesimplement;
+package com.babyboom.servicesimplement;
 
 import com.babyboom.entities.ControlVacunacion;
 import com.babyboom.repositories.IControlVacunacionRepository;
@@ -10,19 +10,19 @@ import java.util.List;
 public class ControlVacunacionServiceImplement implements IControlVacunacionService {
     @Autowired
     private IControlVacunacionRepository iCVr;
-    @Override
+    @java.lang.Override
     public void insert(ControlVacunacion controlvacunacion) {
         iCVr.save(controlvacunacion);
     }
-    @Override
+    @java.lang.Override
     public List<ControlVacunacion> list() {
         return iCVr.findAll();
     }
-    @Override
+    @java.lang.Override
     public void delete(int idControlVacunacion){
         iCVr.findById(idControlVacunacion);
     }
-    @Override
+    @java.lang.Override
     public ControlVacunacion listId(int idControlVacunacion) {
         return iCVr.findById(idControlVacunacion).orElse(new ControlVacunacion());
     }

@@ -5,6 +5,7 @@ import com.babyboom.entities.ControlVacunacion;
 import com.babyboom.services.IControlVacunacionService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,6 +24,7 @@ public class ControlVacunacionController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('USER')")
     public List<ControlVacunacionDTO> list() {
         return iCVs.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();

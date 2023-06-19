@@ -6,6 +6,7 @@ import org.modelmapper.ModelMapper;
 import com.babyboom.dtos.TipocomprobanteDTO;
 import com.babyboom.services.ITipocomprobanteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.GeneratedValue;
@@ -29,6 +30,7 @@ public class TipocomprobanteController {
     //List
 
     @GetMapping
+    @PreAuthorize("hasAuthority('USER')")
     public List<TipocomprobanteDTO>list(){
             return tcS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();

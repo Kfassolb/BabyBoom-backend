@@ -1,5 +1,9 @@
 package com.babyboom.controllers;
 
+import com.babyboom.security.JwtRequest;
+import com.babyboom.security.JwtResponse;
+import com.babyboom.security.JwtTokenUtil;
+import com.babyboom.servicesimplement.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,14 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.babyboom.security.JwtRequest;
-import com.babyboom.security.JwtResponse;
-import com.babyboom.security.JwtTokenUtil;
-import com.babyboom.servicesimplement.JwtUserDetailsService;
-
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
+
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired

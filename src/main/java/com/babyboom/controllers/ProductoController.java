@@ -6,6 +6,7 @@ import com.babyboom.entities.Producto;
 import com.babyboom.services.IProductoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class ProductoController {
 
     //insert
     @PostMapping
+    @PreAuthorize("hasAuthority('USER')")
     public void insert(@RequestBody ProductoDTO dto) {
         ModelMapper m= new ModelMapper();
         Producto p = m.map(dto, Producto.class);

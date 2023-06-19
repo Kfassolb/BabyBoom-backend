@@ -5,6 +5,7 @@ import com.babyboom.entities.Tiposuscrip;
 import com.babyboom.services.ITiposuscripService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +26,7 @@ tS.insert(s);
 }
 //list
 @GetMapping
+@PreAuthorize("hasAuthority('USER')")
     public List<TiposuscripDTO> list(){
 return tS.list().stream().map(x->{
 ModelMapper m=new ModelMapper();

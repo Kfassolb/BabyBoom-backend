@@ -6,6 +6,7 @@ import com.babyboom.entities.Medico;
 import com.babyboom.services.IMedicoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,7 @@ public class MedicoController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('USER')")
     public List<MedicoDTO> list() {
         return medicoService.list().stream().map(x -> {
             ModelMapper mp = new ModelMapper();

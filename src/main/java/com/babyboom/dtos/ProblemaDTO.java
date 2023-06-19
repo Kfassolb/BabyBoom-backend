@@ -7,12 +7,21 @@ import java.time.LocalDate;
 
 public class ProblemaDTO {
 
+    private int idProblema;
     private Soportetecnico soportetecnico;
     private Apoderado apoderado;
     private String Titulo;
     private String Descripcion;
     private LocalDate FechaInicio;
     private LocalDate FechaFin;
+
+    public int getIdProblema() {
+        return idProblema;
+    }
+
+    public void setIdProblema(int idProblema) {
+        this.idProblema = idProblema;
+    }
 
     private int idProducto;
 

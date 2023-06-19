@@ -5,6 +5,7 @@ import com.babyboom.entities.TipoEnfermedad;
 import com.babyboom.services.ITipoEnfermedadService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class TipoEnfermedadController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('USER')")
     public List<TipoEnfermedadDTO> list(){
         return pS.list().stream().map(x->{
             ModelMapper m =new ModelMapper();

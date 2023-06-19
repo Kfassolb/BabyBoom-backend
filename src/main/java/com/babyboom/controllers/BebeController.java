@@ -5,6 +5,7 @@ import com.babyboom.entities.Bebe;
 import com.babyboom.services.IBebeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -25,6 +26,7 @@ public class BebeController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<BebeDTO> list(){
         return bS.list().stream().map(x->{
             ModelMapper m =new ModelMapper();

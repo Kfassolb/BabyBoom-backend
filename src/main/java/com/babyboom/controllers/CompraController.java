@@ -7,6 +7,7 @@ import com.babyboom.entities.Guarderia;
 import com.babyboom.services.ICompraService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -29,6 +30,7 @@ public class CompraController {
     //List
 
     @GetMapping
+    @PreAuthorize("hasAuthority('USER')")
     public List<CompraDTO> list(){
         return cS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();

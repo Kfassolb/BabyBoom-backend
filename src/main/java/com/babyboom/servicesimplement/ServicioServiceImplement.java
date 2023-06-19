@@ -1,4 +1,4 @@
-package com.babyboom.serviciesimplement;
+package com.babyboom.servicesimplement;
 import com.babyboom.entities.Servicio;
 import com.babyboom.repositories.IServicioRepository;
 import com.babyboom.services.IServicioService;

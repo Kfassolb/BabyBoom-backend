@@ -5,6 +5,7 @@ import com.babyboom.entities.Problema;
 import com.babyboom.services.IProblemaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -26,6 +27,7 @@ public class ProblemaController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<ProblemaDTO> listar() {
         return pS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
