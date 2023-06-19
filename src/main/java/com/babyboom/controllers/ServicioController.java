@@ -1,7 +1,7 @@
 package com.babyboom.controllers;
 import com.babyboom.dtos.ServicioDTO;
 import com.babyboom.entities.Servicio;
-import com.babyboom.servicies.IServicioService;
+import com.babyboom.services.IServicioService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

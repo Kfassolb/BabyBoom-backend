@@ -1,9 +1,8 @@
 package com.babyboom.serviciesimplement;
 
 import com.babyboom.entities.GuarderiaServicio;
-import com.babyboom.repositories.IControlVacunacionRepository;
 import com.babyboom.repositories.IGuarderiaServicioRepository;
-import com.babyboom.servicies.IGuarderiaServicioService;
+import com.babyboom.services.IGuarderiaServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

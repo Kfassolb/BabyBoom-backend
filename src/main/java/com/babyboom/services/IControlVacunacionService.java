@@ -1,4 +1,4 @@
-package com.babyboom.servicies;
+package com.babyboom.services;
 
 import com.babyboom.entities.ControlVacunacion;
 import com.babyboom.entities.Servicio;

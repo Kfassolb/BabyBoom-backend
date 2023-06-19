@@ -2,7 +2,7 @@ package com.babyboom.serviciesimplement;
 
 import com.babyboom.entities.ControlVacunacion;
 import com.babyboom.repositories.IControlVacunacionRepository;
-import com.babyboom.servicies.IControlVacunacionService;
+import com.babyboom.services.IControlVacunacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

@@ -1,8 +1,7 @@
 package com.babyboom.controllers;
 
 import com.babyboom.dtos.BebeVacunaDTO;
-import com.babyboom.entities.BebeVacuna;
-import com.babyboom.servicies.IBebeVacunaService;
+import com.babyboom.services.IBebeVacunaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

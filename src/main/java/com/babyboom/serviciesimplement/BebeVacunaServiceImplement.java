@@ -2,7 +2,7 @@ package com.babyboom.serviciesimplement;
 
 import com.babyboom.entities.BebeVacuna;
 import com.babyboom.repositories.IBebeVacunaRepository;
-import com.babyboom.servicies.IBebeVacunaService;
+import com.babyboom.services.IBebeVacunaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
