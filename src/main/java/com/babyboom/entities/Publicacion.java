@@ -3,9 +3,11 @@ package com.babyboom.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="publicacion")
+@Table(name="publicaciones")
 public class Publicacion {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idPublicacion;
    @Column(name= "tituloPublicacion", length = 60, nullable = false)
     private String tituloPublicacion;
     @Column(name= "comentarioPublicacion", length = 500, nullable = false)
@@ -13,6 +15,7 @@ public class Publicacion {
     @ManyToOne
     @JoinColumn(name="idComunidad")
     private Comunidad comunidad;
+    @ManyToOne
     @JoinColumn(name="idApoderado")
     private Apoderado apoderado;
 
