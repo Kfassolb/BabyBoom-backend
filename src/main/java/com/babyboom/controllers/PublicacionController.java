@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -24,11 +25,11 @@ public class PublicacionController {
     }
     //list
     @GetMapping
-    public List<PublicacionDTO>list(){
+    public List<PublicacionDTO> list(){
         return pS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
             return m.map(x, PublicacionDTO.class);
         }).collect(Collectors.toList());
     }
-    ç
+
 }
