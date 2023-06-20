@@ -4,6 +4,7 @@ import com.babyboom.dtos.ApoderadoDTO;
 import com.babyboom.dtos.BebeDTO;
 import com.babyboom.entities.Apoderado;
 import com.babyboom.entities.Bebe;
+import com.babyboom.entities.Comunidad;
 import com.babyboom.services.IApoderadoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +47,12 @@ public class ApoderadoController {
         ModelMapper m=new ModelMapper();
         ApoderadoDTO dto=m.map(aS.listId(id),ApoderadoDTO.class);
         return dto;
+    }
+
+    @PutMapping
+    public void goUpdate(@RequestBody ApoderadoDTO dto){
+        ModelMapper m =new ModelMapper();
+        Apoderado s=m.map(dto, Apoderado.class);
+        aS.insert(s);
     }
 }
