@@ -10,9 +10,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class CompraServiceImpl implements ICompraService {
+public class ICompraServiceImpl implements ICompraService {
+
     @Autowired
     private ICompraRepository cR;
+
     @Override
     public void insert(Compra compra) {
         cR.save(compra);
@@ -27,4 +29,6 @@ public class CompraServiceImpl implements ICompraService {
     public List<Compra> buscarFecha(LocalDate fecha) {
         return cR.findByDateCompra(fecha);
     }
+
+
 }

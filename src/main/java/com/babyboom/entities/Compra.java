@@ -17,7 +17,7 @@ public class Compra {
     private Tipocomprobante idTipoComprobante;
     @Column(name = "Fecha", nullable = false)
     private LocalDate Fecha;
-    @Column(name="ventaTotal",length = 10,nullable = false)
+    @Column(name="ventaTotal",nullable = false)
     private int ventaTotal;
 
     public Compra() {
