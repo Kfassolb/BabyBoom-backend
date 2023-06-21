@@ -1,6 +1,6 @@
 package com.babyboom.dtos;
 
-import com.babyboom.entities.User;
+import com.babyboom.entities.Users;
 
 public class MedicoDTO {
     private int idMedico;
@@ -8,7 +8,7 @@ public class MedicoDTO {
     private String apellido;
     private String especialidad;
     private String email;
-    private User user;
+    private Users user;
 
     public int getIdMedico() {
         return idMedico;
@@ -50,11 +50,11 @@ public class MedicoDTO {
         this.email = email;
     }
 
-    public User getUser() {
+    public Users getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Users user) {
         this.user = user;
     }
 }

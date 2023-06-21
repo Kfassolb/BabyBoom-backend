@@ -23,12 +23,12 @@ public class Medico {
 
     @OneToOne
     @JoinColumn(name = "idUser")
-    private User user;
+    private Users user;
 
     public Medico() {
     }
 
-    public Medico(int idMedico, String nombre, String apellido, String especialidad, String email, User user) {
+    public Medico(int idMedico, String nombre, String apellido, String especialidad, String email, Users user) {
         this.idMedico = idMedico;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -77,11 +77,11 @@ public class Medico {
         this.email = email;
     }
 
-    public User getUser() {
+    public Users getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Users user) {
         this.user = user;
     }
 }

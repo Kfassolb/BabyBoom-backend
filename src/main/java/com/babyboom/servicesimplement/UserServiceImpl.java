@@ -1,6 +1,6 @@
 package com.babyboom.servicesimplement;
 
-import com.babyboom.entities.User;
+import com.babyboom.entities.Users;
 import com.babyboom.repositories.IUserRepository;
 import com.babyboom.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +14,29 @@ public class UserServiceImpl implements IUserService {
     private IUserRepository usuarioRepository;
 
     @Override
-    public void insert(User usuario) {
+    public Integer insert(Users user) {
+        int rpta = usuarioRepository.buscarUsername(user.getUsername());
+        if (rpta == 0) {
+            usuarioRepository.save(user);
+        }
+        return rpta;
+    }
+
+    @Override
+    public List<Users> list() {
+        // TODO Auto-generated method stub
+        return usuarioRepository.findAll();
+    }
+
+    /*@Override
+    public void insert(Users usuario) {
         usuarioRepository.save(usuario);
     }
 
     @Override
-    public List<User> list() {
+    public List<Users> list() {
         return usuarioRepository.findAll();
-    }
+    }*/
 
     @Override
     public void delete(int idUsuario) {
@@ -29,7 +44,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User listId(int idUsuario) {
-        return usuarioRepository.findById(idUsuario).orElse(new User());
+    public Users listId(int idUsuario) {
+        return usuarioRepository.findById(idUsuario).orElse(new Users());
     }
 }

@@ -4,6 +4,7 @@ public class UserDTO {
     private int idUser;
     private String username;
     private String password;
+    private boolean enabled;
 
 
     public int getIdUser() {
@@ -28,5 +29,13 @@ public class UserDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }

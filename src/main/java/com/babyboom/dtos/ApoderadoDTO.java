@@ -3,11 +3,11 @@ package com.babyboom.dtos;
 import com.babyboom.entities.Bebe;
 import com.babyboom.entities.Guarderia;
 import com.babyboom.entities.Tiposuscrip;
-import com.babyboom.entities.User;
+import com.babyboom.entities.Users;
 
 public class ApoderadoDTO {
     private int idApoderado;
-    private User user;
+    private Users user;
     private Bebe bebe;
     private Tiposuscrip tiposuscrip;
     private Guarderia guarderia;
@@ -23,11 +23,11 @@ public class ApoderadoDTO {
         this.idApoderado = idApoderado;
     }
 
-    public User getUser() {
+    public Users getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Users user) {
         this.user = user;
     }
 

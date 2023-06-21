@@ -11,7 +11,7 @@ public class Apoderado {
 
     @OneToOne
     @JoinColumn(name = "idUser")
-    private User user;
+    private Users user;
 
     @OneToOne
     @JoinColumn(name = "idBebe")
@@ -37,7 +37,7 @@ public class Apoderado {
     public Apoderado() {
     }
 
-    public Apoderado(int idApoderado, User user, Bebe bebe, Tiposuscrip tiposuscrip, Guarderia guarderia, String nombre, String apellido, String email) {
+    public Apoderado(int idApoderado, Users user, Bebe bebe, Tiposuscrip tiposuscrip, Guarderia guarderia, String nombre, String apellido, String email) {
         this.idApoderado = idApoderado;
         this.user = user;
         this.bebe = bebe;
@@ -56,11 +56,11 @@ public class Apoderado {
         this.idApoderado = idApoderado;
     }
 
-    public User getUser() {
+    public Users getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Users user) {
         this.user = user;
     }
 

@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 public class ApoderadoController {
     @Autowired
     private IApoderadoService apoderadoService;
+
     @PostMapping()
     public void insert(@RequestBody ApoderadoDTO adto) {
         ModelMapper mp = new ModelMapper();
