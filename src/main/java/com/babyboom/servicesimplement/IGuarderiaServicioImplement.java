@@ -16,7 +16,7 @@ public class IGuarderiaServicioImplement implements IGuarderiaServicioService {
     private IGuarderiaServicioRepository gR;
 
 
-    @java.lang.Override
+    @Override
     public List<GuarderiaServicio> list() {
         return gR.findAll();
     }

@@ -10,19 +10,19 @@ import java.util.List;
 public class ControlVacunacionServiceImplement implements IControlVacunacionService {
     @Autowired
     private IControlVacunacionRepository iCVr;
-    @java.lang.Override
+    @Override
     public void insert(ControlVacunacion controlvacunacion) {
         iCVr.save(controlvacunacion);
     }
-    @java.lang.Override
+    @Override
     public List<ControlVacunacion> list() {
         return iCVr.findAll();
     }
-    @java.lang.Override
+    @Override
     public void delete(int idControlVacunacion){
         iCVr.findById(idControlVacunacion);
     }
-    @java.lang.Override
+    @Override
     public ControlVacunacion listId(int idControlVacunacion) {
         return iCVr.findById(idControlVacunacion).orElse(new ControlVacunacion());
     }

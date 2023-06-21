@@ -12,22 +12,22 @@ public class ApoderadoServiceImpl implements IApoderadoService {
 
     @Autowired
     public IApoderadoRepository aR;
-    @java.lang.Override
+    @Override
     public void insert(Apoderado apoderado) {
         aR.save(apoderado);
     }
 
-    @java.lang.Override
+    @Override
     public List<Apoderado> list() {
         return aR.findAll();
     }
 
-    @java.lang.Override
+    @Override
     public Apoderado listId(int idBebe) {
         return aR.findById(idBebe).orElse(new Apoderado());
     }
 
-    @java.lang.Override
+    @Override
     public void delete(int idBebe) {
         aR.deleteById(idBebe);
     }

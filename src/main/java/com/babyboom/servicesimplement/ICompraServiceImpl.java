@@ -25,7 +25,7 @@ public class ICompraServiceImpl implements ICompraService {
         return cR.findAll();
     }
 
-    @java.lang.Override
+    @Override
     public List<Compra> buscarFecha(LocalDate fecha) {
         return cR.findByDateCompra(fecha);
     }
