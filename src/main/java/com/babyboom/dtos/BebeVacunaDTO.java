@@ -8,18 +8,18 @@ import javax.persistence.ManyToOne;
 
 public class BebeVacunaDTO {
 
-    private int id;
+    private int idBebeVacuna;
 
     private Bebe bebe;
 
     private ControlVacunacion controlVacunacion;
 
-    public int getId() {
-        return id;
+    public int getIdBebeVacuna() {
+        return idBebeVacuna;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdBebeVacuna(int idBebeVacuna) {
+        this.idBebeVacuna = idBebeVacuna;
     }
 
     public Bebe getBebe() {

@@ -8,8 +8,8 @@ import java.util.List;
 public interface IEnfermedad_BebeService {
     public void insert(Enfermedad_bebe enfermedad_bebe);
     List<Enfermedad_bebe> list();
-    public void delete(long id);
-    public Enfermedad_bebe listId(long id);
+    public void delete(int idEnfermedadBebe);
+    public Enfermedad_bebe listId(int idEnfermedadBebe);
 
 
 }

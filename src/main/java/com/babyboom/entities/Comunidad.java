@@ -10,7 +10,7 @@ public class Comunidad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int idComunidad;
     @Column(name = "nameComunidad", length =40, nullable = false)
-private String nameComunidad;
+    private String nameComunidad;
     @Column(name = "Contenido", length =40, nullable = false)
     private String Contenido;
     @Column(name = "FechaInicio", nullable = false)

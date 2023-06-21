@@ -1,22 +1,36 @@
 package com.babyboom.dtos;
 
+import com.babyboom.entities.Apoderado;
 import com.babyboom.entities.Producto;
+
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 public class CompraproductoDTO {
 
-    private int idApoderado;
+    private int idCompraProducto;
+
+    private Apoderado apoderado;
 
     private Producto producto;
 
     private int cantidad;
 
-
-    public int getIdApoderado() {
-        return idApoderado;
+    public int getIdCompraProducto() {
+        return idCompraProducto;
     }
 
-    public void setIdApoderado(int idApoderado) {
-        this.idApoderado = idApoderado;
+    public void setIdCompraProducto(int idCompraProducto) {
+        this.idCompraProducto = idCompraProducto;
+    }
+
+    public Apoderado getApoderado() {
+        return apoderado;
+    }
+
+    public void setApoderado(Apoderado apoderado) {
+        this.apoderado = apoderado;
     }
 
     public Producto getProducto() {

@@ -8,7 +8,11 @@ public class Compraproducto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idApoderado;
+    private int idCompraProducto;
+
+    @ManyToOne
+    @JoinColumn(name = "idApoderado",nullable = false)
+    private Apoderado apoderado;
 
     @ManyToOne
     @JoinColumn(name = "idProducto", nullable = false)
@@ -20,18 +24,27 @@ public class Compraproducto {
     public Compraproducto() {
     }
 
-    public Compraproducto(int idApoderado, Producto producto, int cantidad) {
-        this.idApoderado = idApoderado;
+    public Compraproducto(int idCompraProducto, Apoderado apoderado, Producto producto, int cantidad) {
+        this.idCompraProducto = idCompraProducto;
+        this.apoderado = apoderado;
         this.producto = producto;
         this.cantidad = cantidad;
     }
 
-    public int getIdApoderado() {
-        return idApoderado;
+    public int getIdCompraProducto() {
+        return idCompraProducto;
     }
 
-    public void setIdApoderado(int idApoderado) {
-        this.idApoderado = idApoderado;
+    public void setIdCompraProducto(int idCompraProducto) {
+        this.idCompraProducto = idCompraProducto;
+    }
+
+    public Apoderado getApoderado() {
+        return apoderado;
+    }
+
+    public void setApoderado(Apoderado apoderado) {
+        this.apoderado = apoderado;
     }
 
     public Producto getProducto() {

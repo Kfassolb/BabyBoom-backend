@@ -9,16 +9,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 public class Enfermedad_bebeDTO {
-    private Long id;
+    private int idEnfermedadBebe;
+
     private TipoEnfermedad tipoEnfermedad;
+
     private Bebe bebe;
-    private String sintonmas;
-    public Long getId() {
-        return id;
+    private String sintomas;
+
+    public int getIdEnfermedadBebe() {
+        return idEnfermedadBebe;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdEnfermedadBebe(int idEnfermedadBebe) {
+        this.idEnfermedadBebe = idEnfermedadBebe;
     }
 
     public TipoEnfermedad getTipoEnfermedad() {
@@ -37,11 +40,11 @@ public class Enfermedad_bebeDTO {
         this.bebe = bebe;
     }
 
-    public String getSintonmas() {
-        return sintonmas;
+    public String getSintomas() {
+        return sintomas;
     }
 
-    public void setSintonmas(String sintonmas) {
-        this.sintonmas = sintonmas;
+    public void setSintomas(String sintomas) {
+        this.sintomas = sintomas;
     }
 }

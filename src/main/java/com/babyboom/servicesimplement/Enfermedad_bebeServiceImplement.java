@@ -27,13 +27,13 @@ public class Enfermedad_bebeServiceImplement implements IEnfermedad_BebeService 
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(int id) {
         fR.deleteById((int) id);
 
     }
 
     @Override
-    public Enfermedad_bebe listId(long id) {
-        return fR.findById((int) id).orElse(new Enfermedad_bebe());
+    public Enfermedad_bebe listId(int idEnfermedadBebe) {
+        return fR.findById((int) idEnfermedadBebe).orElse(new Enfermedad_bebe());
     }
 }

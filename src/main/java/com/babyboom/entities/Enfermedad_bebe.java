@@ -7,28 +7,28 @@ import javax.persistence.*;
 public class Enfermedad_bebe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int idEnfermedadBebe;
     @ManyToOne
     @JoinColumn(name = "idTipoEnfermedad")
     private TipoEnfermedad tipoEnfermedad;
     @ManyToOne
     @JoinColumn(name = "idBebe")
     private Bebe bebe;
-    private String sintonmas;
-    public Enfermedad_bebe(Long id, TipoEnfermedad tipoEnfermedad, Bebe bebe, String sintonmas) {
-        this.id = id;
+    private String sintomas;
+    public Enfermedad_bebe(int idEnfermedadBebe, TipoEnfermedad tipoEnfermedad, Bebe bebe, String sintonmas) {
+        this.idEnfermedadBebe = idEnfermedadBebe;
         this.tipoEnfermedad = tipoEnfermedad;
         this.bebe = bebe;
-        this.sintonmas = sintonmas;
+        this.sintomas = sintonmas;
     }
     public Enfermedad_bebe() {
     }
-    public Long getId() {
-        return id;
+    public int getId() {
+        return idEnfermedadBebe;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(int idEnfermedadBebe) {
+        this.idEnfermedadBebe = idEnfermedadBebe;
     }
 
     public TipoEnfermedad getTipoEnfermedad() {
@@ -48,10 +48,10 @@ public class Enfermedad_bebe {
     }
 
     public String getSintonmas() {
-        return sintonmas;
+        return sintomas;
     }
 
-    public void setSintonmas(String sintonmas) {
-        this.sintonmas = sintonmas;
+    public void setSintonmas(String sintomas) {
+        this.sintomas = sintomas;
     }
 }
