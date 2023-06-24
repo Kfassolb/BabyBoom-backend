@@ -1,5 +1,6 @@
 package com.babyboom.servicesimplement;
 
+import com.babyboom.entities.Bebe;
 import com.babyboom.entities.TipoEnfermedad;
 import com.babyboom.repositories.ITipoEnfermedadRepository;
 import com.babyboom.services.ITipoEnfermedadService;
@@ -28,6 +29,11 @@ public class TipoEnfermedadServiceImplement implements ITipoEnfermedadService {
     @Override
     public List<TipoEnfermedad> findByTipoTipoEnfermedad(String tipoTipoEnfermedad) {
         return pR.findByTipoTipoEnfermedad(tipoTipoEnfermedad);
+    }
+
+    @Override
+    public List<Bebe> findBebesConEnfermedad(String nombreTipoEnfermedad) {
+        return pR.findBebesConEnfermedad(nombreTipoEnfermedad);
     }
 
 }

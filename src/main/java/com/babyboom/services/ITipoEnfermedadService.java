@@ -1,5 +1,6 @@
 package com.babyboom.services;
 
+import com.babyboom.entities.Bebe;
 import com.babyboom.entities.TipoEnfermedad;
 
 import java.util.List;
@@ -11,5 +12,7 @@ public interface ITipoEnfermedadService {
     public TipoEnfermedad listId(int idTipoEnfermedad);
 
     List<TipoEnfermedad> findByTipoTipoEnfermedad (String tipoTipoEnfermedad);
+
+    List<Bebe> findBebesConEnfermedad(String nombreTipoEnfermedad);
 
 }

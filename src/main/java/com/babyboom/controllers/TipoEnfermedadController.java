@@ -1,6 +1,7 @@
 package com.babyboom.controllers;
 
 import com.babyboom.dtos.TipoEnfermedadDTO;
+import com.babyboom.entities.Bebe;
 import com.babyboom.entities.TipoEnfermedad;
 import com.babyboom.services.ITipoEnfermedadService;
 import org.modelmapper.ModelMapper;
@@ -56,5 +57,12 @@ public class TipoEnfermedadController {
             return m.map(x,TipoEnfermedadDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @GetMapping("/bebes/{nombreTipoEnfermedad}")
+    public List<Bebe> findBebesConEnfermedad(@PathVariable("nombreTipoEnfermedad")String
+                                                     nombreTipoEnfermedad){
+        return pS.findBebesConEnfermedad(nombreTipoEnfermedad);
+    }
+
 
 }
