@@ -23,6 +23,11 @@ public class ProductoServiceImplement implements IProductoService {
     public void delete(int idProducto){pR.deleteById(idProducto); }
 
     @Override
-    public Producto listId(int IdProducto){return pR.findById(IdProducto).orElse(new Producto()); }
+    public Producto listId(int IdProducto){
+        return pR.findById(IdProducto).orElse(new Producto()); }
 
+    @Override
+    public List<Producto> findByPrecioUBetween(int minPrecioU, int maxPrecioU) {
+        return pR.findByPrecioUBetween(minPrecioU, maxPrecioU);
+    }
 }

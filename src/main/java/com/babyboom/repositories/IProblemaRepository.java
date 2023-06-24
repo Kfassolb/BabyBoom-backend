@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface IProblemaRepository extends JpaRepository<Problema, Integer> {
-    @Query("from Problema p where p.FechaInicio = :fecha")
-    List<Problema> findByFechaInicio(@Param("fecha") LocalDate fecha);
+    @Query("SELECT p FROM Problema p WHERE p.idApoderado = :idApoderado")
+    List<Problema> findByApoderado(@Param("idApoderado") int idApoderado);
 }

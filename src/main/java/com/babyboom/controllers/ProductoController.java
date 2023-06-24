@@ -50,4 +50,13 @@ public class ProductoController {
         Producto p=m.map(dto,Producto.class);
         pS.insert(p);
     }
+    @GetMapping("/precios")
+    public List<ProductoDTO> findByPrecioUBetween(@RequestParam("minPrecioU") int minPrecioU,
+                                                  @RequestParam("maxPrecioU") int maxPrecioU) {
+        List<Producto> productos = pS.findByPrecioUBetween(minPrecioU, maxPrecioU);
+        ModelMapper modelMapper = new ModelMapper();
+        return productos.stream()
+                .map(producto -> modelMapper.map(producto, ProductoDTO.class))
+                .collect(Collectors.toList());
+    }
 }

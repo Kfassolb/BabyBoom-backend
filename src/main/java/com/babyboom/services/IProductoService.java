@@ -13,4 +13,5 @@ public interface IProductoService {
     public void delete(int idProducto);
 
     public Producto listId(int IdProducto);
+    List<Producto> findByPrecioUBetween(int minPrecioU, int maxPrecioU);
 }

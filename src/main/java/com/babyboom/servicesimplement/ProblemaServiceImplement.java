@@ -15,7 +15,8 @@ public class ProblemaServiceImplement implements IProblemaService {
     private IProblemaRepository pR;
 
     @Override
-    public void insert(Problema problema) {pR.save(problema);}
+    public void insert(Problema problema) {
+        pR.save(problema);}
 
     @Override
     public List<Problema> list() {
@@ -23,7 +24,7 @@ public class ProblemaServiceImplement implements IProblemaService {
     }
 
     @Override
-    public List<Problema> buscarFecha(LocalDate fecha) {
-        return pR.findByFechaInicio(fecha);
+    public List<Problema> findByApoderado(int idApoderado) {
+        return pR.findByApoderado(idApoderado);
     }
 }

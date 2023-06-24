@@ -17,16 +17,16 @@ public class Producto {
     @Column(name="Tipo", length = 12,nullable = false)
     private String Tipo;
 
-    @Column(name="Cantidad", length = 35,nullable = false)
-    private Number Cantidad;
+    @Column(name="Cantidad",nullable = false)
+    private int Cantidad;
 
-    @Column(name="PrecioU", length = 35,nullable = false)
-    private Number PrecioU;
+    @Column(name="PrecioU", nullable = false)
+    private int PrecioU;
 
     public Producto(){
     }
 
-   public Producto(int idProducto, String Nombre, String Tipo, Number Cantidad, Number PrecioU) {
+   public Producto(int idProducto, String Nombre, String Tipo, int Cantidad, int PrecioU) {
         this.idProducto = idProducto;
         this.Tipo = Tipo;
         this.Cantidad = Cantidad;
@@ -57,19 +57,19 @@ public class Producto {
         this.Tipo = tipo;
     }
 
-    public Number getCantidad() {
+    public int getCantidad() {
         return Cantidad;
     }
 
-    public void setCantidad(Number cantidad) {
+    public void setCantidad(int cantidad) {
         this.Cantidad = cantidad;
     }
 
-    public Number getPrecioU() {
+    public int getPrecioU() {
         return PrecioU;
     }
 
-    public void setPrecioU(Number precioU) {
+    public void setPrecioU(int precioU) {
         this.PrecioU = precioU;
     }
 }

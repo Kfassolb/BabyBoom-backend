@@ -9,6 +9,6 @@ public interface IProblemaService {
 
     public void insert(Problema problema);
     List<Problema> list();
-    List<Problema> buscarFecha(LocalDate fechaInicio);
+    List<Problema> findByApoderado(int idApoderado);
 
 }

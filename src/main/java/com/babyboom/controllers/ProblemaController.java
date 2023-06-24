@@ -35,12 +35,7 @@ public class ProblemaController {
         }).collect(Collectors.toList());
     }
 
-    @PostMapping("/buscar")
-    public List<ProblemaDTO> buscar(@RequestBody LocalDate fecha) {
-        return pS.buscarFecha(fecha).stream().map(x -> {
-            ModelMapper m = new ModelMapper();
-            return m.map(x, ProblemaDTO.class);
-        }).collect(Collectors.toList());
-
-    }
-}
+    @GetMapping("/problemas/apoderado/{idApoderado}")
+    public List<Problema> getProblemasByApoderado(@PathVariable int idApoderado) {
+        return pS.findByApoderado(idApoderado);
+    }}
