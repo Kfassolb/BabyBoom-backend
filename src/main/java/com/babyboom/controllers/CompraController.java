@@ -1,5 +1,6 @@
 package com.babyboom.controllers;
 
+import com.babyboom.dtos.ApoderadoDTO;
 import com.babyboom.dtos.CompraDTO;
 import com.babyboom.entities.Compra;
 import com.babyboom.services.ICompraService;
@@ -17,7 +18,7 @@ public class CompraController {
     @Autowired
     private ICompraService cS;
 
-    @PostMapping
+    @PostMapping()
     public void insert(@RequestBody CompraDTO dto){
         ModelMapper m = new ModelMapper();
         Compra g = m.map(dto, Compra.class);
@@ -40,6 +41,12 @@ public class CompraController {
             ModelMapper m = new ModelMapper();
             return m.map(x, CompraDTO.class);
         }).collect(Collectors.toList());
+    }
+    @GetMapping("/{id}")
+    public CompraDTO listId(@PathVariable("id") Integer idCompra){
+        ModelMapper mp = new ModelMapper();
+        CompraDTO dto = mp.map(cS.listId(idCompra), CompraDTO.class);
+        return dto;
     }
     @PutMapping
     public void goUpdate(@RequestBody CompraDTO dto){

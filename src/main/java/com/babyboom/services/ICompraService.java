@@ -1,5 +1,6 @@
 package com.babyboom.services;
 
+import com.babyboom.entities.Apoderado;
 import com.babyboom.entities.Compra;
 
 import java.time.LocalDate;
@@ -11,4 +12,6 @@ public interface ICompraService {
     List<Compra>list();
 
     List<Compra> buscarFecha(LocalDate fecha);
+    public Compra listId(int idCompra);
+
 }

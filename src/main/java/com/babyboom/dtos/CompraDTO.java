@@ -15,7 +15,7 @@ public class CompraDTO {
 
     private Tipocomprobante idTipoComprobante;
 
-    private LocalDate Fecha;
+    private LocalDate fecha;
 
     private int ventaTotal;
 
@@ -44,11 +44,11 @@ public class CompraDTO {
     }
 
     public LocalDate getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(LocalDate fecha) {
-        Fecha = fecha;
+        this.fecha = fecha;
     }
 
     public int getVentaTotal() {

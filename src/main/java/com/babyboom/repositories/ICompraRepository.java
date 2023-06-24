@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface ICompraRepository extends JpaRepository<Compra,Integer> {
-    @Query("from Compra c where c.Fecha=:fecha")
+    @Query("from Compra c where c.fecha=:fecha")
     List<Compra> findByDateCompra(@Param("fecha")LocalDate fecha);
 }
