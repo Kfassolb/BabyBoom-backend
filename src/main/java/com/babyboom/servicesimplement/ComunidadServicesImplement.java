@@ -6,6 +6,7 @@ import com.babyboom.services.IComunidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -24,5 +25,10 @@ public class ComunidadServicesImplement implements IComunidadService {
     public void delete(int idComunidad){cR.deleteById(idComunidad);}
     @Override
     public Comunidad listId(int IdComunidad){return cR.findById(IdComunidad).orElse(new Comunidad());}
+
+    @Override
+    public List<Comunidad> buscarloFecha(LocalDate fechaInicio) {
+        return cR.findByDateComunidad(fechaInicio);
+    }
 
 }

@@ -7,4 +7,5 @@ import java.util.List;
 public interface IPublicacionService {
     public void insert(Publicacion publicacion);
     List<Publicacion> list();
+
 }

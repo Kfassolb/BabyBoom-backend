@@ -1,5 +1,6 @@
 package com.babyboom.servicesimplement;
 
+import com.babyboom.entities.Comunidad;
 import com.babyboom.entities.Publicacion;
 import com.babyboom.repositories.IPublicacionRepository;
 import com.babyboom.services.IPublicacionService;
@@ -22,4 +23,5 @@ pR.save(publicacion);
     public List<Publicacion> list() {
         return pR.findAll();
     }
+
 }

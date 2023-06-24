@@ -20,7 +20,7 @@ public class Comunidad {
         this.idComunidad = idComunidad;
         this.nameComunidad = nameComunidad;
         this.Contenido = contenido;
-        this.FechaInicio = fechaInicio;
+        FechaInicio = fechaInicio;
     }
 
     public Comunidad() {
