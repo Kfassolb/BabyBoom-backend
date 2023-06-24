@@ -3,9 +3,18 @@ package com.babyboom.dtos;
 import com.babyboom.entities.Servicio;
 
 public class GuarderiaServicioDTO {
+    private int idGuarderiaServicio;
     private Servicio servicio;
     private Guarderia guarderia;
-    public Servicio getServicio() {
+    public int getIdGuarderiaServicio() {
+        return idGuarderiaServicio;
+    }
+
+    public void setIdGuarderiaServicio(int idGuarderiaServicio)
+    {
+        this.idGuarderiaServicio = idGuarderiaServicio;
+    public Servicio getServicio()
+    {
         return servicio;
     }
     public void setServicio(Servicio servicio) {

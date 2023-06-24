@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table(name = "guarderiaServicio")
 public class GuarderiaServicio {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idGuarderiaServicio;
     @ManyToOne
     @JoinColumn(name = "idServicio",nullable = false)
     private Servicio servicio;
@@ -15,9 +17,17 @@ public class GuarderiaServicio {
     public GuarderiaServicio() {
     }
 
-    public GuarderiaServicio(Servicio servicio, Guarderia guarderia) {
+    public GuarderiaServicio(int idGuarderiaServicio,Servicio servicio, Guarderia guarderia) {
+        this.idGuarderiaServicio = idGuarderiaServicio;
         this.servicio = servicio;
         this.guarderia = guarderia;
+    }
+    public int getIdGuarderiaServicio() {
+        return idGuarderiaServicio;
+    }
+
+    public void setIdGuarderiaServicio(int idGuarderiaServicio) {
+        this.idGuarderiaServicio = idGuarderiaServicio;
     }
 
     public Servicio getServicio() {
