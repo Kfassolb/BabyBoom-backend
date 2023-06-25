@@ -27,7 +27,7 @@ public class ComunidadServicesImplement implements IComunidadService {
     public Comunidad listId(int IdComunidad){return cR.findById(IdComunidad).orElse(new Comunidad());}
 
     @Override
-    public List<Comunidad> buscarloFecha(LocalDate fechaInicio) {
+    public List<Comunidad> findByDateComunidad(LocalDate fechaInicio) {
         return cR.findByDateComunidad(fechaInicio);
     }
 

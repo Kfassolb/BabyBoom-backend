@@ -13,5 +13,5 @@ public interface IComunidadService {
 
     public Comunidad listId(int IdComunidad );
 
-    List<Comunidad> buscarloFecha(LocalDate fechaInicio);
+    List<Comunidad> findByDateComunidad (LocalDate fechaInicio);
 }

@@ -41,8 +41,8 @@ public class ComunidadController {
         return dto;
     }
     @PostMapping("/buscarlo")
-    public List<ComunidadDTO> buscarlo(@RequestBody LocalDate FechaInicio) {
-        return cS.buscarloFecha(FechaInicio).stream().map(x -> {
+    List<ComunidadDTO> search(@RequestBody LocalDate fechaInicio) {
+        return cS.findByDateComunidad(fechaInicio).stream().map(x -> {
             ModelMapper m = new ModelMapper();
             return m.map(x, ComunidadDTO.class);
         }).collect(Collectors.toList());

@@ -19,6 +19,10 @@ public class Publicacion {
     @JoinColumn(name="idApoderado")
     private Apoderado apoderado;
 
+    public Publicacion(int idPublicacion) {
+        this.idPublicacion = idPublicacion;
+    }
+
     public Publicacion(String tituloPublicacion, String comentarioPublicacion, Comunidad comunidad, Apoderado apoderado) {
         this.tituloPublicacion = tituloPublicacion;
         this.comentarioPublicacion = comentarioPublicacion;
@@ -28,6 +32,14 @@ public class Publicacion {
 
     public Publicacion() {
 
+    }
+
+    public int getIdPublicacion() {
+        return idPublicacion;
+    }
+
+    public void setIdPublicacion(int idPublicacion) {
+        this.idPublicacion = idPublicacion;
     }
 
     public String getTituloPublicacion() {
