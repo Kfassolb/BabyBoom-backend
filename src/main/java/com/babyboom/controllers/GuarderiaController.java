@@ -1,6 +1,7 @@
 package com.babyboom.controllers;
 
 import com.babyboom.dtos.GuarderiaDTO;
+import com.babyboom.dtos.GuarderiaSideDTO;
 import com.babyboom.dtos.TipocomprobanteDTO;
 import com.babyboom.entities.Guarderia;
 import com.babyboom.entities.Tipocomprobante;
@@ -52,5 +53,11 @@ public class GuarderiaController {
         ModelMapper m = new ModelMapper();
         Guarderia t =m.map(dto,Guarderia.class);
         gS.insert(t);
+    }
+
+    @GetMapping("/guarderia-count")
+    public List<GuarderiaSideDTO> getSideCountByGuarderia() {
+        List<GuarderiaSideDTO> guarderiaSideDTOS = gS.report01();
+        return guarderiaSideDTOS;
     }
 }

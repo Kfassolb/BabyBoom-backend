@@ -1,5 +1,7 @@
 package com.babyboom.servicesimplement;
 
+import com.babyboom.dtos.CompraFechaDTO;
+import com.babyboom.dtos.GuarderiaSideDTO;
 import com.babyboom.entities.Compra;
 import com.babyboom.repositories.ICompraRepository;
 import com.babyboom.services.ICompraService;
@@ -7,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service

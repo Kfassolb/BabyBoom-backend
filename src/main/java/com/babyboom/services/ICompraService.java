@@ -1,5 +1,7 @@
 package com.babyboom.services;
 
+import com.babyboom.dtos.CompraFechaDTO;
+import com.babyboom.dtos.GuarderiaSideDTO;
 import com.babyboom.entities.Compra;
 
 import java.time.LocalDate;
@@ -11,4 +13,6 @@ public interface ICompraService {
     List<Compra>list();
 
     List<Compra> buscarFecha(LocalDate fecha);
+
+
 }
