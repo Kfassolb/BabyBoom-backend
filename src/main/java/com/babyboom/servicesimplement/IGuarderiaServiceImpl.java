@@ -37,15 +37,15 @@ public class IGuarderiaServiceImpl implements IGuarderiaService {
 
     @Override
     public List<GuarderiaSideDTO> report01() {
-    List<String[]> sideCountByGuarderia = gR.getSideCountByGuarderia();
-    List<GuarderiaSideDTO> guarderiaSideDTOS = new ArrayList<>();
+        List<String[]> sideCountByGuarderia = gR.getSideCountByGuarderia();
+        List<GuarderiaSideDTO> guarderiaSideDTOS = new ArrayList<>();
 
-    for(String[] data : sideCountByGuarderia){
-        GuarderiaSideDTO dto = new GuarderiaSideDTO();
-        dto.setSide(data[0]);
-        dto.setSideCount(Integer.parseInt(data[1]));
-        guarderiaSideDTOS.add(dto);
-    }
+        for (String[] data : sideCountByGuarderia) {
+            GuarderiaSideDTO dto = new GuarderiaSideDTO();
+            dto.setSide(data[0]);
+            dto.setSideCount(Integer.parseInt(data[1]));
+            guarderiaSideDTOS.add(dto);
+        }
 
         return guarderiaSideDTOS;
     }

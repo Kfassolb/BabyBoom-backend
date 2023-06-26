@@ -2,7 +2,7 @@ package com.babyboom.dtos;
 
 public class GuarderiaSideDTO {
 
-    private String Side;
+    private String side;
 
     private int sideCount;
 
@@ -10,16 +10,16 @@ public class GuarderiaSideDTO {
     }
 
     public GuarderiaSideDTO(String side, int sideCount) {
-        Side = side;
+        this.side = side;
         this.sideCount = sideCount;
     }
 
     public String getSide() {
-        return Side;
+        return side;
     }
 
     public void setSide(String side) {
-        Side = side;
+        this.side = side;
     }
 
     public int getSideCount() {
