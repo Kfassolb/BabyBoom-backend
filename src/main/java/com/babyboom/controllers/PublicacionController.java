@@ -1,5 +1,6 @@
 package com.babyboom.controllers;
 
+import com.babyboom.dtos.PublicacionComunidadDTO;
 import com.babyboom.dtos.PublicacionDTO;
 import com.babyboom.entities.Publicacion;
 import com.babyboom.services.IPublicacionService;
@@ -30,6 +31,11 @@ public class PublicacionController {
             ModelMapper m = new ModelMapper();
             return m.map(x, PublicacionDTO.class);
         }).collect(Collectors.toList());
+    }
+    @GetMapping("/contar")
+    public List<PublicacionComunidadDTO> getcomunidadCountBytitulo() {
+        List<PublicacionComunidadDTO> publicacionComunidadDTOS = pS.reporte01();
+        return publicacionComunidadDTOS;
     }
 
 }
