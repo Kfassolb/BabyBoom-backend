@@ -13,6 +13,7 @@ public interface IGuarderiaService {
     public void delete(int idGuarderia);
 
     public Guarderia listId(int idGuarderia);
+    public List<GuarderiaSideDTO> report01();
 
 
 }
