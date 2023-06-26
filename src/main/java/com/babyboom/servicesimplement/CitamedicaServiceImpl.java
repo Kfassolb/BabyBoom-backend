@@ -1,6 +1,7 @@
 package com.babyboom.servicesimplement;
 
 import com.babyboom.dtos.Reportellb1DTO;
+import com.babyboom.dtos.Reportellb2DTO;
 import com.babyboom.entities.Citamedica;
 import com.babyboom.repositories.ICitamedicaRepository;
 import com.babyboom.services.ICitamedicaService;
@@ -48,5 +49,19 @@ public class CitamedicaServiceImpl implements ICitamedicaService {
         }
 
         return reportellb1DTOS;
+    }
+    @Override
+    public List<Reportellb2DTO> reportellb2(String nombre) {
+        List<String[]> getCountMedicalAppointment = citamedicaR.getCountMedicalAppointment(nombre);
+        List<Reportellb2DTO> reportellb2DTOS = new ArrayList<>();
+
+        for (String[] data : getCountMedicalAppointment) {
+            Reportellb2DTO dto = new Reportellb2DTO();
+            dto.setNombre(data[0]);
+            dto.setCount(Integer.parseInt(data[1]));
+            reportellb2DTOS.add(dto);
+        }
+
+        return reportellb2DTOS;
     }
 }

@@ -1,9 +1,6 @@
 package com.babyboom.controllers;
 
-import com.babyboom.dtos.ApoderadoDTO;
-import com.babyboom.dtos.CitamedicaDTO;
-import com.babyboom.dtos.MedicoDTO;
-import com.babyboom.dtos.Reportellb1DTO;
+import com.babyboom.dtos.*;
 import com.babyboom.entities.Apoderado;
 import com.babyboom.entities.Citamedica;
 import com.babyboom.entities.Medico;
@@ -12,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,5 +57,10 @@ public class CitamedicaController {
     public List<Reportellb1DTO> getCountByplace() {
         List<Reportellb1DTO> reportellb1DTOS = citamedicaS.reportellb1();
         return reportellb1DTOS;
+    }
+    @PostMapping("/med-appointment-count")
+    public List<Reportellb2DTO> getCountMedicalAppointment(@RequestParam String nombre) {
+        List<Reportellb2DTO> reportellb2DTOS = citamedicaS.reportellb2(nombre);
+        return reportellb2DTOS;
     }
 }
