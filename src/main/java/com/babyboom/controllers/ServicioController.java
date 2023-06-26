@@ -23,7 +23,7 @@ public class ServicioController {
         sS.insert(s);
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
+    //@PreAuthorize("hasAuthority('USER')")
     public List<ServicioDTO> list(){
         return sS.list().stream().map(x -> {
             ModelMapper m=new ModelMapper();

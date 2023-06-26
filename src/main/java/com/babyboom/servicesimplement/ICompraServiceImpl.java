@@ -1,7 +1,6 @@
 package com.babyboom.servicesimplement;
 
-import com.babyboom.dtos.CompraFechaDTO;
-import com.babyboom.dtos.GuarderiaSideDTO;
+
 import com.babyboom.entities.Compra;
 import com.babyboom.repositories.ICompraRepository;
 import com.babyboom.services.ICompraService;
@@ -33,5 +32,9 @@ public class ICompraServiceImpl implements ICompraService {
         return cR.findByDateCompra(fecha);
     }
 
+    @Override
+    public Compra listId(int idCompra) {
+        return cR.findById(idCompra).orElse(new Compra());
+    }
 
 }

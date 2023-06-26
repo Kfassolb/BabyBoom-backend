@@ -11,12 +11,8 @@ import java.util.List;
 
 @Repository
 public interface ICompraRepository extends JpaRepository<Compra,Integer> {
-    @Query("from Compra c where c.Fecha=:fecha")
+    @Query("from Compra c where c.fecha=:fecha")
     List<Compra> findByDateCompra(@Param("fecha")LocalDate fecha);
 
-    @Query(value= "SELECT c.venta_total, COUNT(a.id_apoderado) from compra c \n" +
-            "join apoderados a on c.id_apoderado = a.id_apoderado \n" +
-            "WHERE c.venta_total>=1300 \n"+
-            "GROUP BY c.venta_total ORDER BY COUNT(c.venta_total) DESC",nativeQuery = true)
-    List<String[]> getCountApoderados();
+
 }

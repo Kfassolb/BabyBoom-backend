@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/enfermedad_bebes")
+@RequestMapping("/enfermedad-bebes")
 public class Enfermedad_bebeController {
     @Autowired
     private IEnfermedad_BebeService fS;

@@ -12,11 +12,14 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name = "idApoderado",nullable = false)
     private Apoderado idApoderado;
+
     @ManyToOne
     @JoinColumn(name = "idTipoComprobante",nullable = false)
     private Tipocomprobante idTipoComprobante;
-    @Column(name = "Fecha", nullable = false)
-    private LocalDate Fecha;
+
+    @Column(name = "fecha")
+    private LocalDate fecha;
+
     @Column(name="ventaTotal",nullable = false)
     private int ventaTotal;
 
@@ -27,7 +30,7 @@ public class Compra {
         this.idCompra = idCompra;
         this.idApoderado = idApoderado;
         this.idTipoComprobante = idTipoComprobante;
-        Fecha = fecha;
+        this.fecha = fecha;
         this.ventaTotal = ventaTotal;
     }
 
@@ -56,11 +59,11 @@ public class Compra {
     }
 
     public LocalDate getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(LocalDate fecha) {
-        Fecha = fecha;
+        this.fecha = fecha;
     }
 
     public int getVentaTotal() {

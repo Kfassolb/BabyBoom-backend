@@ -1,5 +1,7 @@
 package com.babyboom.controllers;
 
+import com.babyboom.dtos.ReporteEnfermedadBebeDTO;
+import com.babyboom.dtos.ReporteEnfermedadDTO;
 import com.babyboom.dtos.TipoEnfermedadDTO;
 import com.babyboom.entities.TipoEnfermedad;
 import com.babyboom.services.ITipoEnfermedadService;
@@ -50,11 +52,17 @@ public class TipoEnfermedadController {
     }
 
     @PostMapping("/buscarTipo")
-    List<TipoEnfermedadDTO>search(@RequestParam String tipoTipoEnfermedad){
+    List<ReporteEnfermedadDTO>search(@RequestParam String tipoTipoEnfermedad){
         return pS.findByTipoTipoEnfermedad(tipoTipoEnfermedad).stream().map(x ->{
             ModelMapper m= new ModelMapper();
-            return m.map(x,TipoEnfermedadDTO.class);
+            return m.map(x,ReporteEnfermedadDTO.class);
         }).collect(Collectors.toList());
+    }
+
+    @GetMapping("/bebes/{nombreTipoEnfermedad}")
+    public List<ReporteEnfermedadBebeDTO> findBebesConEnfermedad(@PathVariable("nombreTipoEnfermedad")String
+                                                     nombreTipoEnfermedad){
+        return pS.findBebesConEnfermedad(nombreTipoEnfermedad);
     }
 
 }
