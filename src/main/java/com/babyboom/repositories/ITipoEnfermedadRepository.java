@@ -14,6 +14,5 @@ public interface ITipoEnfermedadRepository extends JpaRepository <TipoEnfermedad
 @Query("from TipoEnfermedad e where e.tipoTipoEnfermedad=:tipoTipoEnfermedad")
     List<String[]>findByTipoTipoEnfermedad(@Param("tipoTipoEnfermedad")String tipoTipoEnfermedad);
 
-    @Query("SELECT b FROM Bebe b WHERE b.tipoEnfermedad.nombreTipoEnfermedad = :nombreTipoEnfermedad")
-    List<String[]>findBebesConEnfermedad(@Param("nombreTipoEnfermedad") String nombreTipoEnfermedad);
+
 }

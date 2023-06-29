@@ -15,6 +15,6 @@ public interface ITipoEnfermedadService {
 
     List<ReporteEnfermedadDTO> findByTipoTipoEnfermedad (String tipoTipoEnfermedad);
 
-    List<ReporteEnfermedadBebeDTO> findBebesConEnfermedad(String nombreTipoEnfermedad);
+
 
 }

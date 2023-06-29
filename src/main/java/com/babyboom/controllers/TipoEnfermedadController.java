@@ -59,10 +59,4 @@ public class TipoEnfermedadController {
         }).collect(Collectors.toList());
     }
 
-    @GetMapping("/bebes/{nombreTipoEnfermedad}")
-    public List<ReporteEnfermedadBebeDTO> findBebesConEnfermedad(@PathVariable("nombreTipoEnfermedad")String
-                                                     nombreTipoEnfermedad){
-        return pS.findBebesConEnfermedad(nombreTipoEnfermedad);
-    }
-
 }

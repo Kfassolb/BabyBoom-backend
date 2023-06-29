@@ -14,18 +14,14 @@ public class Bebe {
     private String nombreBebe;
     @Column(name = "fechaBebe",nullable = false)
     private LocalDate fechaBebe;
-    @ManyToOne
-    @JoinColumn(name = "idTipoEnfermedad")
-    private TipoEnfermedad tipoEnfermedad;
 
     public Bebe() {
     }
 
-    public Bebe(int idBebe, String nombreBebe, LocalDate fechaBebe, TipoEnfermedad tipoEnfermedad) {
+    public Bebe(int idBebe, String nombreBebe, LocalDate fechaBebe) {
         this.idBebe = idBebe;
         this.nombreBebe = nombreBebe;
         this.fechaBebe = fechaBebe;
-        this.tipoEnfermedad = tipoEnfermedad;
     }
 
     public int getIdBebe() {
@@ -50,13 +46,5 @@ public class Bebe {
 
     public void setFechaBebe(LocalDate fechaBebe) {
         this.fechaBebe = fechaBebe;
-    }
-
-    public TipoEnfermedad getTipoEnfermedad() {
-        return tipoEnfermedad;
-    }
-
-    public void setTipoEnfermedad(TipoEnfermedad tipoEnfermedad) {
-        this.tipoEnfermedad = tipoEnfermedad;
     }
 }

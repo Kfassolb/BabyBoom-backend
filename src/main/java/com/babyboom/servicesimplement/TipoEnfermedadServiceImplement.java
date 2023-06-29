@@ -43,22 +43,4 @@ public class TipoEnfermedadServiceImplement implements ITipoEnfermedadService {
         return reporteEnfermedadDTO;
     }
 
-
-    @Override
-    public List<ReporteEnfermedadBebeDTO> findBebesConEnfermedad(String nombreTipoEnfermedad) {
-        List<String[]> getBebebyNombreEnfermedad = pR.findByTipoTipoEnfermedad(nombreTipoEnfermedad);
-        List<ReporteEnfermedadBebeDTO> reporteenfermedadbebeDTO = new ArrayList<>();
-
-        for (String[] data : getBebebyNombreEnfermedad) {
-            ReporteEnfermedadBebeDTO dto = new ReporteEnfermedadBebeDTO();
-            dto.setNombre_tipo_enfermedad(data[0]);
-            dto.setNombre_tipo_enfermedad(String.valueOf(Integer.parseInt(data[1])));
-            reporteenfermedadbebeDTO.add(dto);
-        }
-
-        return reporteenfermedadbebeDTO;
-    }
-
-
-
 }
