@@ -20,12 +20,14 @@ public class Bebe {
 
     public Bebe() {
     }
-    public Bebe(int idBebe, String nombreBebe, LocalDate fechaBebe) {
+
+    public Bebe(int idBebe, String nombreBebe, LocalDate fechaBebe, TipoEnfermedad tipoEnfermedad) {
         this.idBebe = idBebe;
         this.nombreBebe = nombreBebe;
         this.fechaBebe = fechaBebe;
-        this.tipoEnfermedad =tipoEnfermedad;
+        this.tipoEnfermedad = tipoEnfermedad;
     }
+
     public int getIdBebe() {
         return idBebe;
     }
@@ -49,9 +51,11 @@ public class Bebe {
     public void setFechaBebe(LocalDate fechaBebe) {
         this.fechaBebe = fechaBebe;
     }
+
     public TipoEnfermedad getTipoEnfermedad() {
         return tipoEnfermedad;
     }
+
     public void setTipoEnfermedad(TipoEnfermedad tipoEnfermedad) {
         this.tipoEnfermedad = tipoEnfermedad;
     }

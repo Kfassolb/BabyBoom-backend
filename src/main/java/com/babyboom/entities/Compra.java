@@ -14,13 +14,13 @@ public class Compra {
     private Apoderado apoderado;
 
     @ManyToOne
-    @JoinColumn(name = "idTipoComprobante",nullable = false)
+    @JoinColumn(name = "idTipocomprobante",nullable = false)
     private Tipocomprobante tipocomprobante;
 
-    @Column(name = "fecha")
+    @Column(name = "fecha",nullable = false)
     private LocalDate fecha;
 
-    @Column(name="ventaTotal",nullable = false)
+    @Column(name="ventaTotal",length = 35, nullable = false)
     private int ventaTotal;
 
     public Compra() {

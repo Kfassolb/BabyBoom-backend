@@ -18,7 +18,7 @@ public class CompraController {
     @Autowired
     private ICompraService cS;
 
-    @PostMapping()
+    @PostMapping
     public void insert(@RequestBody CompraDTO dto){
         ModelMapper m = new ModelMapper();
         Compra g = m.map(dto, Compra.class);
