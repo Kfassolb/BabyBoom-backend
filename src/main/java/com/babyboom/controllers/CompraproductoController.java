@@ -27,7 +27,6 @@ public class CompraproductoController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
     public List<CompraproductoDTO> listar() {
         return cS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();

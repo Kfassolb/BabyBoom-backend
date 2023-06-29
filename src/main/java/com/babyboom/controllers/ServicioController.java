@@ -32,7 +32,8 @@ public class ServicioController {
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id")Integer id){
-       this.sS.delete(id);}
+       sS.delete(id);
+    }
     @GetMapping("/{id}")
     public ServicioDTO listId(@PathVariable("id")Integer id){
     ModelMapper m=new ModelMapper();

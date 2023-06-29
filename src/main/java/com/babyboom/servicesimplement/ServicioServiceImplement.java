@@ -22,7 +22,7 @@ public class ServicioServiceImplement implements IServicioService {
     }
     @Override
     public void delete(int idServicio) {
-        sR.findById(idServicio);
+        sR.deleteById(idServicio);
     }
     @Override
     public Servicio listId(int idServicio) {

@@ -12,11 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/guarderiaservicios ")
+@RequestMapping("/guarderiaservicios")
 public class GuarderiaServicioController {
     private IGuarderiaServicioService gS;
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
     public List<GuarderiaServicioDTO> listar() {
         return gS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();

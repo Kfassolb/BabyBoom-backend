@@ -11,11 +11,11 @@ public class Compra {
     private int idCompra;
     @ManyToOne
     @JoinColumn(name = "idApoderado",nullable = false)
-    private Apoderado idApoderado;
+    private Apoderado apoderado;
 
     @ManyToOne
     @JoinColumn(name = "idTipoComprobante",nullable = false)
-    private Tipocomprobante idTipoComprobante;
+    private Tipocomprobante tipocomprobante;
 
     @Column(name = "fecha")
     private LocalDate fecha;
@@ -26,10 +26,10 @@ public class Compra {
     public Compra() {
     }
 
-    public Compra(int idCompra, Apoderado idApoderado, Tipocomprobante idTipoComprobante, LocalDate fecha, int ventaTotal) {
+    public Compra(int idCompra, Apoderado apoderado, Tipocomprobante tipocomprobante, LocalDate fecha, int ventaTotal) {
         this.idCompra = idCompra;
-        this.idApoderado = idApoderado;
-        this.idTipoComprobante = idTipoComprobante;
+        this.apoderado = apoderado;
+        this.tipocomprobante = tipocomprobante;
         this.fecha = fecha;
         this.ventaTotal = ventaTotal;
     }
@@ -42,20 +42,20 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public Apoderado getIdApoderado() {
-        return idApoderado;
+    public Apoderado getApoderado() {
+        return apoderado;
     }
 
-    public void setIdApoderado(Apoderado idApoderado) {
-        this.idApoderado = idApoderado;
+    public void setApoderado(Apoderado apoderado) {
+        this.apoderado = apoderado;
     }
 
-    public Tipocomprobante getIdTipoComprobante() {
-        return idTipoComprobante;
+    public Tipocomprobante getTipocomprobante() {
+        return tipocomprobante;
     }
 
-    public void setIdTipoComprobante(Tipocomprobante idTipoComprobante) {
-        this.idTipoComprobante = idTipoComprobante;
+    public void setTipocomprobante(Tipocomprobante tipocomprobante) {
+        this.tipocomprobante = tipocomprobante;
     }
 
     public LocalDate getFecha() {

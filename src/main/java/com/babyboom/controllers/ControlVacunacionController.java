@@ -25,7 +25,6 @@ public class ControlVacunacionController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
     public List<ControlVacunacionDTO> list() {
         return iCVs.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
