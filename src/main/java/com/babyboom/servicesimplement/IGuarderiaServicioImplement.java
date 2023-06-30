@@ -17,4 +17,9 @@ public class IGuarderiaServicioImplement implements IGuarderiaServicioService {
     public List<GuarderiaServicio> list() {
         return gR.findAll();
     }
+
+    @Override
+    public void insert(GuarderiaServicio guarderiaServicio) {
+        gR.save(guarderiaServicio);
+    }
 }

@@ -2,7 +2,6 @@ package com.babyboom.entities;
 
 
 import javax.persistence.*;
-import java.awt.font.NumericShaper;
 
 @Entity
 @Table(name= "producto")

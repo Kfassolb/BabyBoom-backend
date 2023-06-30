@@ -27,7 +27,6 @@ public class ProblemaController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public List<ProblemaDTO> listar() {
         return pS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();

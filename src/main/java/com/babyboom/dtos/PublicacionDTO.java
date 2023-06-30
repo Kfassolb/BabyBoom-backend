@@ -4,11 +4,19 @@ import com.babyboom.entities.Apoderado;
 import com.babyboom.entities.Comunidad;
 
 public class PublicacionDTO {
-
+    private int idPublicacion;
     private String tituloPublicacion;
     private String comentarioPublicacion;
     private Comunidad comunidad;
     private Apoderado apoderado;
+
+    public int getIdPublicacion() {
+        return idPublicacion;
+    }
+
+    public void setIdPublicacion(int idPublicacion) {
+        this.idPublicacion = idPublicacion;
+    }
 
     public String getTituloPublicacion() {
         return tituloPublicacion;

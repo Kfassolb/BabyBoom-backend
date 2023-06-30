@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Enfermedad_bebe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @ManyToOne
     @JoinColumn(name = "idTipoEnfermedad")
     private TipoEnfermedad tipoEnfermedad;
@@ -15,19 +15,22 @@ public class Enfermedad_bebe {
     @JoinColumn(name = "idBebe")
     private Bebe bebe;
     private String sintonmas;
-    public Enfermedad_bebe(Long id, TipoEnfermedad tipoEnfermedad, Bebe bebe, String sintonmas) {
+
+    public Enfermedad_bebe(int id, TipoEnfermedad tipoEnfermedad, Bebe bebe, String sintonmas) {
         this.id = id;
         this.tipoEnfermedad = tipoEnfermedad;
         this.bebe = bebe;
         this.sintonmas = sintonmas;
     }
+
     public Enfermedad_bebe() {
     }
-    public Long getId() {
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

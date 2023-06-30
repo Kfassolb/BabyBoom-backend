@@ -16,4 +16,9 @@ public class BebeVacunaServiceImplement implements IBebeVacunaService {
     public List<BebeVacuna> list() {
         return iBVr.findAll();
     }
+
+    @Override
+    public void insert(BebeVacuna bebeVacuna) {
+        iBVr.save(bebeVacuna);
+    }
 }

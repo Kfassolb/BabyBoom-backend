@@ -18,7 +18,7 @@ public class Compraproducto {
     @JoinColumn(name = "idProducto", nullable = false)
     private Producto producto;
 
-    @Column(nullable = false)
+    @Column(name = "cantidad",nullable = false)
     private int cantidad;
 
     public Compraproducto() {

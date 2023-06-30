@@ -23,54 +23,52 @@ public class ProblemaDTO {
         this.idProblema = idProblema;
     }
 
-    private int idProducto;
-
-    private String Nombre;
-
-    private String Tipo;
-
-    private Number Cantidad;
-
-    private Number PrecioU;
-
-    public int getIdProducto() {
-        return idProducto;
+    public Soportetecnico getSoportetecnico() {
+        return soportetecnico;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setSoportetecnico(Soportetecnico soportetecnico) {
+        this.soportetecnico = soportetecnico;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public Apoderado getApoderado() {
+        return apoderado;
     }
 
-    public void setNombre(String nombre) {
-        this.Nombre = nombre;
+    public void setApoderado(Apoderado apoderado) {
+        this.apoderado = apoderado;
     }
 
-    public String getTipo() {
-        return Tipo;
+    public String getTitulo() {
+        return Titulo;
     }
 
-    public void setTipo(String tipo) {
-        this.Tipo = tipo;
+    public void setTitulo(String titulo) {
+        Titulo = titulo;
     }
 
-    public Number getCantidad() {
-        return Cantidad;
+    public String getDescripcion() {
+        return Descripcion;
     }
 
-    public void setCantidad(Number cantidad) {
-        this.Cantidad = cantidad;
+    public void setDescripcion(String descripcion) {
+        Descripcion = descripcion;
     }
 
-    public Number getPrecioU() {
-        return PrecioU;
+    public LocalDate getFechaInicio() {
+        return FechaInicio;
     }
 
-    public void setPrecioU(Number precioU) {
-        this.PrecioU = precioU;
+    public void setFechaInicio(LocalDate fechaInicio) {
+        FechaInicio = fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
+        return FechaFin;
+    }
+
+    public void setFechaFin(LocalDate fechaFin) {
+        FechaFin = fechaFin;
     }
 }
 
